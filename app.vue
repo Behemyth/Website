@@ -1,9 +1,9 @@
 <template lang="pug">
 div(class="sm:py-10")
   Html(lang="en")
-  NavigationBar
+  AppHeader
   NuxtPage
-
+  AppFooter
 </template>
 
 <style scoped>
