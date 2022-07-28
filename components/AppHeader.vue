@@ -1,12 +1,12 @@
 <template lang="pug">
-div(class="flex justify-between max-w-2xl px-4 py-4 mx-auto sm:px-8")
+div.flex.justify-between.max-w-4xl.px-4.py-4.mx-auto(class="sm:px-8")
   <!-- Navigation -->
-  div(class="text-gray-700 dark:text-gray-200")
+  div.text-gray-700(class="dark:text-gray-200")
     ContentNavigation(v-slot="{ navigation }")
-      NuxtLink(v-for="link of navigation" :key="link._path" :to="link._path" active-class="font-bold" class="mr-4") {{ link.navTitle || link.title }}
+      NuxtLink.mr-4(v-for="link of navigation" :key="link._path" :to="link._path" active-class="font-bold") {{ link.navTitle || link.title }}
 
   <!-- Social icons & Color Mode -->
-  div(class="space-x-3 text-gray-500 transition")
+  div.space-x-3.text-gray-500.transition
     ColorModeSwitch(class="hover:text-gray-700 dark:hover:text-gray-300")
 
 </template>

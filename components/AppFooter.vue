@@ -1,5 +1,5 @@
 <template lang="pug">
-footer.p-4.bg-white.shadow(class="dark:bg-gray-900")
+footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
   div(class="md:flex md:justify-between")
     div(class="mb-6 md:mb-0")
       NuxtLink.flex.items-center(to="/")
