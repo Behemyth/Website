@@ -15,7 +15,7 @@ const onClick = () => (colorMode.value === 'light' ? (colorMode.preference = 'da
 </script>
 
 <template lang="pug">
-button(aria-label="Color Mode" class="inline-block" @click="onClick")
+button.inline-block(aria-label="Color Mode" @click="onClick")
   ColorScheme(placeholder="...")
     AppIcon(v-if="colorMode.value === 'dark'" name="heroicons-outline:moon")
     AppIcon(v-else name="heroicons-outline:sun")

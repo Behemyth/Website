@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="sm:py-10")
+div
   Html(lang="en")
   AppHeader
   NuxtPage
