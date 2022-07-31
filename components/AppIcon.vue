@@ -22,8 +22,7 @@ watch(() => props.name, async () => {
 </script>
 
 <template lang="pug">
-Iconify(v-if="icon" :icon="icon" class="inline-block w-5 h-5")
+Iconify.inline-block.w-5.h-5(v-if="icon" :icon="icon")
 Component(:is="component" v-else-if="component")
-span
-  v-else {{ name }})
+span(v-else) {{ name }})
 </template>
