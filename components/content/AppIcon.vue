@@ -28,8 +28,8 @@ watch(() => props.name, loadIconComponent)
 </script>
 
 <template lang="pug">
-span.inline-bloc.w-5.h-5(v-if="isFetching")
+span.inline-block.w-5.h-5(v-if="isFetching")
 Iconify.inline-block.w-5.h-5(v-if="icon" :icon="icon")
-Component.inline-bloc.w-5.h-5(:is="component" v-else-if="component")
-span(v-else) {{ name }})
+Component.inline-block.w-5.h-5(:is="component" v-else-if="component")
+span(v-else) {{ name }}
 </template>
