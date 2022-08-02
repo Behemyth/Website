@@ -1,5 +1,5 @@
 ---
-navTitle: 'About'
+navTitle: 'Reviews'
 ---
 
-# About
+# Movie and Game Reviews
