@@ -7,6 +7,10 @@ const props = defineProps({
   name: {
     type: String,
     required: true
+  },
+  size: {
+    type: Number,
+    required: true
   }
 })
 const state = useState('icons', () => ({}))
@@ -28,8 +32,8 @@ watch(() => props.name, loadIconComponent)
 </script>
 
 <template lang="pug">
-span.inline-block.w-5.h-5(v-if="isFetching")
-Iconify.inline-block.w-5.h-5(v-if="icon" :icon="icon")
-Component.inline-block.w-5.h-5(:is="component" v-else-if="component")
+span.inline-block(v-if="isFetching")
+Iconify.inline-block(v-if="icon" :icon="icon")
+Component.inline-block(:is="component" v-else-if="component")
 span(v-else) {{ name }}
 </template>

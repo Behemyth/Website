@@ -7,7 +7,7 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
         span.self-center.text-2xl.font-semibold.whitespace-nowrap(class="dark:text-white") Asher Norland
     div.flex.space-x-6(class="sm:justify-center")
       NuxtLink(v-for="social in data" :to="social.link")
-        AppIcon(:name="social.icon")
+        AppIcon(:name="social.icon", :size="10")
         span.sr-only {{ social.name }}
 
   hr.my-4.border-gray-200(class="sm:mx-auto dark:border-gray-700")
