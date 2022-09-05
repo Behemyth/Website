@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const colorMode = useColorMode();
+const colorMode = useColorMode()
 const onClick = () =>
-    colorMode.value === "light"
-        ? (colorMode.preference = "dark")
-        : (colorMode.preference = "light");
+  colorMode.value === 'light'
+    ? (colorMode.preference = 'dark')
+    : (colorMode.preference = 'light')
 </script>
 
 <template lang="pug">
