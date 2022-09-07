@@ -12,7 +12,7 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
                 ) Asher Norland
         .flex.space-x-6(class="sm:justify-center")
             NuxtLink(v-for="social in data", :to="social.link")
-                AppIcon(:name="social.icon", :size="8")
+                Icon(:name="social.icon", :size="24")
                 span.sr-only {{ social.name }}
 
     hr.my-4.border-gray-200(class="sm:mx-auto dark:border-gray-700")
@@ -23,6 +23,6 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 
 <script setup>
 const { data } = await useAsyncData('footer', () =>
-  queryContent('/').where({ _partial: true }).find()
+    queryContent('/').where({ _partial: true }).find()
 )
 </script>
