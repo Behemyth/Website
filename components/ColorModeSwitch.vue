@@ -12,7 +12,7 @@ button.inline-block.w-5(aria-label="Color Mode", @click="onClick")
         Icon(
             v-if="colorMode.value === 'dark'",
             name="heroicons-outline:moon",
-            :size="24"
+            size="24"
         )
-        Icon(v-else, name="heroicons-outline:sun", :size="24")
+        Icon(v-else, name="heroicons-outline:sun", size="24")
 </template>
