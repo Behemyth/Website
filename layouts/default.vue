@@ -1,10 +1,10 @@
 <template lang="pug">
 div
-  Html(lang="en")
-  AppHeader
-  NuxtPage
-  AppFooter
+    AppHeader
+    slot
+    AppFooter
 </template>
 
 <style scoped>
+
 </style>
