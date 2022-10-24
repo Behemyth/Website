@@ -8,18 +8,28 @@
     "preview": "nuxi preview",
     "lint": "eslint ."
   },
+  "files": [
+    "app/",
+    "components/",
+    "layouts/",
+    "app.config.ts",
+    "app.vue",
+    "nuxt.config.ts",
+    "tailwind.config.ts"
+  ],
   "dependencies": {
-    "@nuxt/content": "^2.1.1",
-    "@nuxtjs/color-mode": "^3.1.5",
-    "@nuxtjs/tailwindcss": "^5.3.3",
-    "@tailwindcss/typography": "^0.5.7"
+    "@nuxt/content": "^2.2.0",
+    "@nuxtjs/color-mode": "^3.1.8",
+    "@nuxtjs/tailwindcss": "^6.0.1",
+    "@tailwindcss/typography": "^0.5.7",
+    "nuxt-icon": "^0.1.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
-    "eslint": "^8.23.1",
-    "nuxt": "^3.0.0-rc.11",
-    "nuxt-icon": "^0.1.5",
-    "typescript": "^4.8.3",
+    "@volar/vue-language-plugin-pug": "^1.0.9",
+    "eslint": "^8.25.0",
+    "nuxt": "^3.0.0-rc.12",
+    "typescript": "^4.8.4",
     "vite-plugin-pug": "^0.3.1"
   }
 }
