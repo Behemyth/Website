@@ -21,6 +21,8 @@
     "@volar/vue-language-plugin-pug": "^1.0.16",
     "eslint": "^8.30.0",
     "eslint-plugin-pug": "^1.2.5",
+    "eslint-plugin-vue": "^9.8.0",
+    "eslint-plugin-vue-pug": "^0.5.5",
     "nuxt": "^3.0.0",
     "typescript": "^4.9.4",
     "vite-plugin-pug": "^0.3.1"
