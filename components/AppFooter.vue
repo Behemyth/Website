@@ -23,6 +23,6 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 
 <script setup>
 const { data } = await useAsyncData('footer', () =>
-    queryContent('/').where({ _partial: true }).find()
+    queryContent('_.data', 'socials').find()
 )
 </script>
