@@ -1,8 +1,3 @@
-<script setup lang="ts">
-const colorMode = useColorMode()
-const onClick = () => (colorMode.value === 'light' ? (colorMode.preference = 'dark') : (colorMode.preference = 'light'))
-</script>
-
 <template lang="pug">
 button.inline-block.w-5(aria-label="Color Mode", @click="onClick")
     ColorScheme(placeholder="🗘")
@@ -13,3 +8,8 @@ button.inline-block.w-5(aria-label="Color Mode", @click="onClick")
         )
         Icon(v-else, name="heroicons-outline:sun", size="24")
 </template>
+
+<script setup lang="ts">
+const colorMode = useColorMode()
+const onClick = () => (colorMode.value === 'light' ? (colorMode.preference = 'dark') : (colorMode.preference = 'light'))
+</script>

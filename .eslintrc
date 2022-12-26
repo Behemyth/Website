@@ -1,6 +1,17 @@
 {
-  "extends": "@nuxtjs/eslint-config-typescript",
+  "extends": [
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:vue/vue3-recommended",
+    "plugin:vue-pug/vue3-recommended"
+  ],
   "plugins": [
     "pug"
-  ]
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      "tab"
+    ],
+    "no-tabs": 0
+  }
 }
