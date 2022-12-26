@@ -1,4 +1,5 @@
 <template lang="pug">
+
 footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
     div(class="md:flex sm:items-center md:justify-between")
         span.mb-6(class="md:mb-0")
@@ -13,7 +14,7 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
         .flex.space-x-6(class="sm:justify-center")
             NuxtLink(v-for="social in data", :to="social.link")
                 Icon(:name="social.icon", size="24")
-                span.sr-only {{ social.name }}
+                span.sr-only {{ social.title }}
 
     hr.my-4.border-gray-200(class="sm:mx-auto dark:border-gray-700")
     div(class="sm:flex sm:items-center sm:justify-between")
@@ -21,8 +22,15 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
         span.flex.mt-4.text-sm.text-gray-500(class="sm:justify-center sm:mt-0") Made with ❤️ by Asher and Ola
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+interface Social extends ParsedContent {
+    icon: string
+    link: URL
+}
+
 const { data } = await useAsyncData('footer', () =>
-    queryContent('_.data', 'socials').find()
+    queryContent<Social>('_data', 'socials').where({ _partial: true }).find()
 )
+console.log(data)
 </script>
