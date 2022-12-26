@@ -32,5 +32,4 @@ interface Social extends ParsedContent {
 const { data } = await useAsyncData('footer', () =>
     queryContent<Social>('_data', 'socials').where({ _partial: true }).find()
 )
-console.log(data)
 </script>
