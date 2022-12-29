@@ -11,9 +11,9 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 					class="dark:text-white"
 				) Asher Norland
 		.flex.space-x-6(class="sm:justify-center")
-			NuxtLink(v-for="social in data", :key="social._id", :to="social.link")
+			NuxtLink(v-for="social in data", :key="social.name", :to="social.link")
 				Icon(:name="social.icon", size="24")
-				span.sr-only {{ social.title }}
+				span.sr-only {{ social.name }}
 
 	hr.my-4.border-gray-200(class="sm:mx-auto dark:border-gray-700")
 	div(class="sm:flex sm:items-center sm:justify-between")
@@ -23,12 +23,22 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
-interface Social extends ParsedContent {
+
+interface Social {
+	name: string
 	icon: string
 	link: URL
 }
 
+interface MetaData extends ParsedContent {
+	socials: Array<Social>
+}
+
 const { data } = await useAsyncData('footer', () =>
-	queryContent<Social>('_data', 'socials').where({ _partial: true }).find()
+	queryContent<MetaData>('_data')
+		.where({ _partial: true, title: 'Metadata' })
+		.findOne().then((value) => {
+			return value.socials
+		})
 )
 </script>

@@ -1,0 +1,19 @@
+socials:
+  - name: Github
+    icon: fa-brands:github
+    link: https://github.com/Behemyth
+  - name: Instagram
+    icon: fa-brands:instagram
+    link: https://www.instagram.com/behemythic
+  - name: Google Scholar
+    icon: academicons:google-scholar
+    link: https://scholar.google.com/citations?user=9TCQH78AAAAJ&hl=en
+  - name: LinkedIn
+    icon: fa-brands:linkedin-in
+    link: https://www.linkedin.com/in/asher-norland
+  - name: Twitter
+    icon: fa-brands:twitter
+    link: https://twitter.com/Behemythic
+  - name: Youtube
+    icon: fa-brands:youtube
+    link: https://www.youtube.com/@asher-norland
