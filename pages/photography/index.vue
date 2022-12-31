@@ -1,6 +1,6 @@
 <template lang="pug">
 div.max-w-4xl.px-4.py-10.mx-auto.bg-white(class="sm:px-8 sm:shadow dark:bg-gray-800 sm:rounded")
-    App404(name="Zoe")
+    ContentDoc.prose.prose-gray.max-w-none(class="dark:prose-invert")
 </template>
 
 <style lang="postcss" scoped>
