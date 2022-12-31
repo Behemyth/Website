@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@volar/vue-language-plugin-pug": "^1.0.18",
+    "@volar/vue-language-plugin-pug": "^1.0.19",
     "eslint": "^8.30.0",
     "eslint-plugin-pug": "^1.2.5",
     "eslint-plugin-vue": "^9.8.0",
