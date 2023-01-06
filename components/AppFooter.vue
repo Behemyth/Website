@@ -10,6 +10,13 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 				span.self-center.text-2xl.font-semibold.whitespace-nowrap(
 					class="dark:text-white"
 				) Asher Norland
+		span
+			NuxtLink(to="contact")
+				Icon(name="fa6-regular:id-card", size="24")
+				span.self-center.text-2xl.font-semibold.whitespace-nowrap(
+					class="dark:text-white"
+				) Contact Information
+
 		.flex.space-x-6(class="sm:justify-center")
 			NuxtLink(v-for="social in data", :key="social.name", :to="social.link")
 				Icon(:name="social.icon", size="24")
