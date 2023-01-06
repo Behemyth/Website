@@ -10,10 +10,10 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 				span.self-center.text-2xl.font-semibold.whitespace-nowrap(
 					class="dark:text-white"
 				) Asher Norland
-		span
+		.flex.space-x-6(class="sm:justify-center")
 			NuxtLink(to="contact")
-				Icon(name="fa6-regular:id-card", size="24")
-				span.self-center.text-2xl.font-semibold.whitespace-nowrap(
+				Icon.mr-3.h-12(name="fa6-regular:id-card", size="24")
+				span.self-center.text-l.whitespace-nowrap(
 					class="dark:text-white"
 				) Contact Information
 
