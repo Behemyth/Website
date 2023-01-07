@@ -11,6 +11,13 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 					class="dark:text-white"
 				) Asher Norland
 		.flex.space-x-6(class="sm:justify-center")
+			NuxtLink(to="contact")
+				Icon.mr-3.h-12(name="fa6-regular:id-card", size="24")
+				span.self-center.text-l.whitespace-nowrap(
+					class="dark:text-white"
+				) Contact Information
+
+		.flex.space-x-6(class="sm:justify-center")
 			NuxtLink(v-for="social in data", :key="social.name", :to="social.link")
 				Icon(:name="social.icon", size="24")
 				span.sr-only {{ social.name }}
@@ -22,17 +29,7 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 </template>
 
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
-
-interface Social {
-	name: string
-	icon: string
-	link: URL
-}
-
-interface MetaData extends ParsedContent {
-	socials: Array<Social>
-}
+import type { MetaData } from '../schema/metadata'
 
 const { data } = await useAsyncData('footer', () =>
 	queryContent<MetaData>('_data')

@@ -1,15 +1,30 @@
 <template lang="pug">
-button.inline-block.w-5(aria-label="Color Mode", @click="onClick")
-    ColorScheme(placeholder="🗘")
-        Icon(
-            v-if="colorMode.value === 'dark'",
-            name="heroicons-outline:moon",
-            size="24"
-        )
-        Icon(v-else, name="heroicons-outline:sun", size="24")
+button(aria-label="Color Mode", @click="onClick")
+	ColorScheme
+		Icon(
+			v-if="colorMode.preference === 'dark'",
+			name="heroicons-outline:moon",
+			size="24"
+		)
+		Icon(
+			v-else-if="colorMode.preference === 'light'",
+			name="heroicons-outline:sun",
+			size="24"
+		)
+		Icon(
+			v-else,
+			name="fe:desktop",
+			size="24"
+		)
 </template>
 
 <script setup lang="ts">
 const colorMode = useColorMode()
-const onClick = () => (colorMode.value === 'light' ? (colorMode.preference = 'dark') : (colorMode.preference = 'light'))
+const onClick = () => {
+	const values = ['system', 'light', 'dark']
+	const index = values.indexOf(colorMode.preference)
+	const next = (index + 1) % values.length
+
+	colorMode.preference = values[next]
+}
 </script>

@@ -1,5 +1,5 @@
 <template lang="pug">
-h1 What is this {{ name }} is not there
+h1 What is this? {{ name }} was not found
 
 </template>
 
