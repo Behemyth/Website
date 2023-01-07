@@ -29,17 +29,7 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 </template>
 
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
-
-interface Social {
-	name: string
-	icon: string
-	link: URL
-}
-
-interface MetaData extends ParsedContent {
-	socials: Array<Social>
-}
+import type { MetaData } from '../schema/metadata'
 
 const { data } = await useAsyncData('footer', () =>
 	queryContent<MetaData>('_data')
