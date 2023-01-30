@@ -7,13 +7,8 @@ button(aria-label="Color Mode", @click="onClick")
 			size="24"
 		)
 		Icon(
-			v-else-if="colorMode.preference === 'light'",
-			name="heroicons-outline:sun",
-			size="24"
-		)
-		Icon(
 			v-else,
-			name="fe:desktop",
+			name="heroicons-outline:sun",
 			size="24"
 		)
 </template>
@@ -21,8 +16,8 @@ button(aria-label="Color Mode", @click="onClick")
 <script setup lang="ts">
 const colorMode = useColorMode()
 const onClick = () => {
-	const values = ['system', 'light', 'dark']
-	const index = values.indexOf(colorMode.preference)
+	const values = ['light', 'dark']
+	const index = values.indexOf(colorMode.value)
 	const next = (index + 1) % values.length
 
 	colorMode.preference = values[next]
