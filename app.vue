@@ -1,5 +1,5 @@
 <template lang="pug">
-NuxtLayout
+AppLayout
     NuxtPage
 </template>
 
