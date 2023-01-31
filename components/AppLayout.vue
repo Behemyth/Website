@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template lang="pug">
 div
   Html(lang="en")
@@ -11,6 +8,6 @@ div
 
 <style lang="postcss">
 body {
-  @apply bg-primary-50 dark:bg-primary-900;
+  @apply bg-primary-50 dark: bg-primary-900;
 }
 </style>
