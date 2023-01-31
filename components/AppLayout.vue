@@ -2,10 +2,11 @@
 </script>
 
 <template lang="pug">
-Html(lang="en")
-AppHeader
-slot
-AppFooter
+div
+  Html(lang="en")
+  AppHeader
+  slot
+  AppFooter
 </template>
 
 <style lang="postcss">
