@@ -1,8 +1,7 @@
 <template lang="pug">
 .flex.space-x-6
-	NuxtLink(v-for="social in socials", :key="social.name", :to="social.link")
+	NuxtLink(v-for="social in socials", :key="social.name", :to="social.link", :title="social.name")
 		Icon(:name="social.icon", :size="size")
-		span.sr-only {{ social.name }}
 </template>
 
 <script setup lang="ts">
