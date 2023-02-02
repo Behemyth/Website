@@ -19,6 +19,7 @@ export default defineNuxtConfig({
 	},
 	// https://content.nuxtjs.org
 	content: {
+		documentDriven: true,
 		navigation: {
 			fields: ['navTitle']
 		},
