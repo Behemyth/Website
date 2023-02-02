@@ -9,4 +9,5 @@ export interface Social {
 
 export interface MetaData extends ParsedContent {
     socials: Array<Social>
+    contacts: Array<Social>
 }
