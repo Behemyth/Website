@@ -11,10 +11,7 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 					class="dark:text-white"
 				) Asher Norland
 
-		.flex.space-x-6
-			NuxtLink(v-for="social in data", :key="social.name", :to="social.link")
-				Icon(:name="social.icon", size="24")
-				span.sr-only {{ social.name }}
+		SocialIcons(:socials="socials ? socials: []", size="24")
 
 	hr.my-4.border-gray-200(class="sm:mx-auto dark:border-gray-700")
 	div(class="sm:flex sm:items-center sm:justify-between")
@@ -25,7 +22,7 @@ footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 <script setup lang="ts">
 import type { MetaData } from '../schema/metadata'
 
-const { data } = await useAsyncData('footer', () =>
+const { data: socials } = useLazyAsyncData('socials', () =>
 	queryContent<MetaData>('_data')
 		.where({ _partial: true, title: 'Metadata' })
 		.findOne().then((value) => {
