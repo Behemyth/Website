@@ -1,9 +1,8 @@
 <template lang="pug">
-div
-  Html(lang="en")
-  AppHeader
-  slot
-  AppFooter
+Html(lang="en")
+AppHeader
+slot
+AppFooter
 </template>
 
 <style lang="postcss">
