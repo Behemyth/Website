@@ -22,7 +22,7 @@ contacts:
     icon: fa6-regular:envelope
     link: mailto:asher.norland@gmail.com
   - name: Phone
-    icon: fa6-regular:id-card
+    icon: fa:phone
     link: tel:+1218-206-3918
   - name: WhatsApp
     icon: fa6-brands:whatsapp
