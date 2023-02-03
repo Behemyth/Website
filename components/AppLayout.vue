@@ -1,13 +1,8 @@
 <template lang="pug">
-div
-  Html(lang="en")
+Html(lang="en")
+.flex.flex-col.min-h-screen
   AppHeader
-  slot
+  .grow
+    slot
   AppFooter
 </template>
-
-<style lang="postcss">
-body {
-  @apply bg-primary-50 dark:bg-primary-900;
-}
-</style>
