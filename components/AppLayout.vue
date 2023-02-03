@@ -1,8 +1,8 @@
 <template lang="pug">
 Html(lang="en")
-div.flex.flex-col.min-h-screen
+.flex.flex-col.min-h-screen
   AppHeader
-  div.grow
+  .grow
     slot
   AppFooter
 </template>

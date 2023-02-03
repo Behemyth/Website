@@ -1,5 +1,5 @@
 <template lang="pug">
-footer.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
+footer.w-full.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 	div(class="md:flex sm:items-center md:justify-between")
 		.mb-6(class="md:mb-0")
 			NuxtLink.flex.items-center(to="contact")
