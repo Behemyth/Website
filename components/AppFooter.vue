@@ -9,7 +9,7 @@ footer.w-full.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 				)
 				span.self-center.text-2xl.font-semibold.whitespace-nowrap(
 					class="dark:text-white"
-				) Asher Norland
+				) Contact
 
 		SocialIcons(:socials="socials ? socials: []", size="24")
 
