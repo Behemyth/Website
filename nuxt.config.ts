@@ -11,6 +11,7 @@ export default defineNuxtConfig({
 		'@nuxt/content',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/color-mode',
+		'@nuxt/devtools',
 		'nuxt-icon'
 	],
 	// https://color-mode.nuxtjs.org
