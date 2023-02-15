@@ -20,7 +20,7 @@ footer.w-full.p-4.bg-white.shadow.max-w-4xl.mx-auto(class="dark:bg-gray-900")
 </template>
 
 <script setup lang="ts">
-import type { MetaData } from '../schema/metadata'
+import type { MetaData } from '../../schema/metadata'
 
 const { data: socials } = useLazyAsyncData('socials', () =>
 	queryContent<MetaData>('_data')
