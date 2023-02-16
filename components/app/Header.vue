@@ -1,8 +1,8 @@
 <template lang="pug">
-nav.bg-white.border-gray-200.p-4.rounded.max-w-4xl.mx-auto(
-	class="sm:px-2 dark:bg-gray-900"
+nav.bg-white.p-4.rounded.max-w-4xl.mx-auto(
+	class="sm:px-2 dark:bg-gray-700"
 )
-	.container.flex.items-center.justify-between.mx-auto
+	.flex.items-center.justify-between.mx-auto
 		NuxtLink.flex.items-center(to="/")
 			img.h-6.mr-3.rounded-full(
 				src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?s=200",
