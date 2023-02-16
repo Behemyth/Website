@@ -1,7 +1,7 @@
 <template lang="pug">
-.items-center.justify-between.hidden.w-full(
+.items-center.justify-between.w-full(
 	id="navbar-search"
-	class="md:flex md:w-auto md:order-1"
+	class="md:flex md:w-auto"
 )
 	.flex.flex-col.p-4.border.border-gray-100.rounded-lg.bg-gray-50(
 		class="md:flex-row md:space-x-4 md:items-center md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
