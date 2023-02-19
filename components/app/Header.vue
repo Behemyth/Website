@@ -1,6 +1,6 @@
 <template lang="pug">
-nav.bg-white.p-4.rounded.max-w-4xl.mx-auto(
-	class="sm:px-2 dark:bg-gray-700"
+nav.max-w-5xl.w-full.mx-auto.p-4.bg-white.shadow(
+	class="dark:bg-gray-900"
 )
 	.flex.items-center.justify-between.mx-auto
 		NuxtLink.flex.items-center(to="/")

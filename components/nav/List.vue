@@ -1,5 +1,5 @@
 <template lang="pug">
-.flex.flex-row.items-center.justify-between.w-full.p-4.border.space-x-4.rounded-lg(
+.flex.flex-row.items-center.justify-between.p-4.border.space-x-4.rounded-lg(
 	id="navbar-search"
 )
 	NuxtLink.py-4.pl-2.pr-2.text-gray-700.rounded(
