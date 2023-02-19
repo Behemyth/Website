@@ -1,13 +1,13 @@
 <template lang="pug">
-.flex.flex-row.items-center.justify-between.p-4.border.space-x-4.rounded-lg(
+.flex.flex-row.items-center.justify-between.space-x-4.p-4(
 	id="navbar-search"
 )
-	NuxtLink.py-4.pl-2.pr-2.text-gray-700.rounded(
+	NuxtLink.px-2.text-gray-700(
 		v-for="link of list"
 		:key="link._path"
 		:to="link._path"
 		active-class="font-bold"
-		class="md:p-0 dark:text-gray-400"
+		class="dark:text-gray-400"
 	) {{ link.navTitle || link.title }}
 </template>
 
