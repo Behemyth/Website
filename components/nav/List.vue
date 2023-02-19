@@ -20,7 +20,7 @@ const props = defineProps({
 })
 
 const list = computed(() => {
-	const socials = props.list
-	return socials
+	const list = props.list
+	return list
 })
 </script>

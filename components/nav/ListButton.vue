@@ -1,5 +1,5 @@
 <template lang="pug">
-NavSearch(:list="list")
+NavList(:list="list")
 </template>
 
 <script setup lang="ts">

@@ -15,7 +15,14 @@ nav.max-w-5xl.w-full.mx-auto.p-4.bg-white.shadow(
 			span.self-center.text-l.font-semibold.whitespace-nowrap(
 				class="md:text-xl dark:text-white"
 			) Home
-		NavList(:list="navigation? navigation: []")
+		NavList.hidden(
+			:list="navigation? navigation: []"
+			class="md:flex"
+		)
+		NavListButton(
+			:list="navigation? navigation: []"
+			class="md:hidden"
+		)
 		NavSearch.hidden(
 			:list="search? search: []",
 			class="md:flex"

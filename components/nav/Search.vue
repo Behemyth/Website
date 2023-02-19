@@ -50,7 +50,7 @@ const props = defineProps({
 })
 
 const list = computed(() => {
-	const navigationList = props.list
-	return navigationList
+	const list = props.list
+	return list
 })
 </script>
