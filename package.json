@@ -16,7 +16,7 @@
 		"nuxt-icon": "^0.4.0"
 	},
 	"devDependencies": {
-		"@nuxt/devtools": "^0.4.2",
+		"@nuxt/devtools": "^0.4.5",
 		"@nuxtjs/eslint-config-typescript": "^12.0.0",
 		"@volar/vue-language-plugin-pug": "^1.6.1",
 		"eslint": "^8.39.0",
