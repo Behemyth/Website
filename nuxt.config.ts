@@ -1,12 +1,12 @@
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-	extends: '@nuxt-themes/typography',
 	modules: [
 		'@nuxt/content',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/color-mode',
 		'@nuxt/devtools',
-		'nuxt-icon'
+		'nuxt-icon',
+		'@nuxtjs/tailwindcss'
 	],
 	// https://color-mode.nuxtjs.org
 	colorMode: {

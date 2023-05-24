@@ -8,5 +8,6 @@ export default {
 				primary: colors.gray
 			}
 		}
-	}
+	},
+	plugins: [require('@tailwindcss/typography')]
 }
