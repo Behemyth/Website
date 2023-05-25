@@ -3,7 +3,7 @@
 	id="navbar-search"
 )
 	NuxtLink.px-2.text-gray-700(
-		v-for="link of list"
+		v-for="link of props.list"
 		:key="link._path"
 		:to="link._path"
 		active-class="font-bold"
@@ -12,6 +12,9 @@
 </template>
 
 <script setup lang="ts">
+
+import { NavItem } from '@nuxt/content/dist/runtime/types'
+
 const props = defineProps({
 	list: {
 		type: Array<NavItem>,
@@ -19,8 +22,4 @@ const props = defineProps({
 	}
 })
 
-const list = computed(() => {
-	const list = props.list
-	return list
-})
 </script>

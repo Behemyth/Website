@@ -1,17 +1,15 @@
 <template lang="pug">
-NavSearch(:list="list")
+NavSearch(:list="props.list")
 </template>
 
 <script setup lang="ts">
+
+import { NavItem } from '@nuxt/content/dist/runtime/types'
+
 const props = defineProps({
 	list: {
 		type: Array<NavItem>,
 		required: true
 	}
-})
-
-const list = computed(() => {
-	const list = props.list
-	return list
 })
 </script>
