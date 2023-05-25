@@ -4,24 +4,6 @@
 		for="search-dropdown"
 		class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
 	)
-	button(
-		id="dropdown-button"
-		data-dropdown-toggle="dropdown"
-		class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
-		type="button"
-	) All categories
-		Icon.w-5.h-5(
-			name="fa6-solid:magnifying-glass"
-			class="text-gray-500"
-		)
-
-	div(id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700")
-		ul(class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button")
-		li(v-for="item in list", :key="item.name")
-			button(
-				type="button"
-				class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-			) {{item.name}}
 	.relative.w-full
 		input(
 			id="search-dropdown"
