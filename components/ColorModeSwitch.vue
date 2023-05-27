@@ -1,6 +1,7 @@
 <template lang="pug">
 button(aria-label="Color Mode", @click="onClick")
-	ColorScheme
+	// ColorScheme instead of ClientOnly
+	ClientOnly
 		Icon(
 			v-if="colorMode.preference === 'dark'",
 			name="heroicons-outline:moon",
