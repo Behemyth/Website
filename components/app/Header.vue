@@ -24,11 +24,11 @@ nav.max-w-5xl.w-full.mx-auto.p-4.bg-white.shadow(
 			class="md:hidden"
 		)
 		NavSearch.hidden(
-			:list="search? search: []",
+			:navigation="navigation",
 			class="md:flex"
 		)
 		NavSearchButton(
-			:list="search? search: []",
+			:navigation="navigation",
 			class="md:hidden"
 		)
 		ColorModeSwitch.flex-none.p-2(
@@ -38,6 +38,5 @@ nav.max-w-5xl.w-full.mx-auto.p-4.bg-white.shadow(
 
 <script setup lang="ts">
 const { data: navigation } = useLazyAsyncData('navigation', () => fetchContentNavigation().then(navigation => navigation.slice(1)))
-const { data: search } = useLazyAsyncData('search', () => fetchContentNavigation().then(navigation => navigation.slice(1, -1)))
 
 </script>

@@ -13,11 +13,9 @@
 
 <script setup lang="ts">
 
-import { NavItem } from '@nuxt/content/dist/runtime/types'
-
 const props = defineProps({
 	list: {
-		type: Array<NavItem>,
+		type: Array<any>,
 		required: true
 	}
 })
