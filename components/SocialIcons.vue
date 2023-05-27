@@ -1,7 +1,11 @@
 <template lang="pug">
 .flex.space-x-6
 	NuxtLink(v-for="social in socials", :key="social.name", :to="social.link", :title="social.name")
-		Icon(:name="social.icon", :size="size")
+		Icon(
+			:name="social.icon",
+			:size="size",
+			class="text-gray-900 dark:text-gray-300"
+		)
 </template>
 
 <script setup lang="ts">

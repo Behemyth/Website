@@ -5,12 +5,15 @@ button(aria-label="Color Mode", @click="onClick")
 		Icon(
 			v-if="colorMode.preference === 'dark'",
 			name="heroicons-outline:moon",
-			size="24"
+			size="24",
+			class="dark:text-gray-300"
 		)
 		Icon(
 			v-else,
 			name="heroicons-outline:sun",
 			size="24"
+			class="text-gray-900"
+
 		)
 </template>
 
