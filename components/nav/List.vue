@@ -1,5 +1,5 @@
 <template lang="pug">
-.flex.flex-row.items-center.justify-between.space-x-4.p-4(
+.flex.flex-row.items-center.justify-between.space-x-4.p-2(
 	id="navbar-search"
 )
 	NuxtLink.px-2.text-gray-700(
