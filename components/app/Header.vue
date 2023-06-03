@@ -34,6 +34,6 @@ nav.max-w-5xl.w-full.mx-auto.p-4.bg-white.shadow(
 </template>
 
 <script setup lang="ts">
-const { data: navigation } = useLazyAsyncData('navigation', () => fetchContentNavigation().then(navigation => navigation.slice(1)))
+const { data: navigation } = useLazyAsyncData('navigation', () => fetchContentNavigation())
 
 </script>
