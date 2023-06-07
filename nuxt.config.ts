@@ -1,17 +1,12 @@
-
-// That allows to overwrite these dependencies paths via `.env` for local development
-const envModules = {
-	typography: process?.env?.THEME_DEV_TYPOGRAPHY_PATH || '@nuxt-themes/typography'
-}
-
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-	extends: [envModules.typography],
 	modules: [
 		'@nuxt/content',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/color-mode',
-		'nuxt-icon'
+		'@nuxt/devtools',
+		'nuxt-icon',
+		'@nuxtjs/tailwindcss'
 	],
 	// https://color-mode.nuxtjs.org
 	colorMode: {
