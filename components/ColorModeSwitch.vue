@@ -1,5 +1,5 @@
 <template lang="pug">
-button.inline-block(aria-label="Color Mode", @click="onClick")
+button(aria-label="Color Mode", @click="onClick")
 	// ColorScheme instead of ClientOnly
 	ClientOnly
 		Icon(
@@ -13,6 +13,7 @@ button.inline-block(aria-label="Color Mode", @click="onClick")
 			name="heroicons-outline:sun",
 			size="24"
 			class="text-gray-900"
+
 		)
 </template>
 
@@ -25,5 +26,4 @@ const onClick = () => {
 
 	colorMode.preference = values[next]
 }
-
 </script>
