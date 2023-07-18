@@ -1,5 +1,5 @@
 <template lang="pug">
-nav.max-w-5xl.w-full.mx-auto.p-4.bg-white.shadow(
+nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 	class="dark:bg-gray-900"
 )
 	.flex.items-center.justify-between.mx-auto
