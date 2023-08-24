@@ -24,7 +24,7 @@
 		"eslint-plugin-vue": "^9.17.0",
 		"eslint-plugin-vue-pug": "^0.6.0",
 		"nuxt": "^3.6.5",
-		"typescript": "^5.1.6",
+		"typescript": "^5.2.2",
 		"vite-plugin-pug": "^0.3.1"
 	}
 }
