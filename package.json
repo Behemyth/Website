@@ -15,7 +15,7 @@
 		"nuxt-icon": "^0.6.6"
 	},
 	"devDependencies": {
-		"@nuxt/image": "^1.0.0",
+		"@nuxt/image": "^1.1.0",
 		"@nuxtjs/eslint-config-typescript": "^12.1.0",
 		"@tailwindcss/typography": "^0.5.10",
 		"@volar/vue-language-plugin-pug": "^1.6.5",
