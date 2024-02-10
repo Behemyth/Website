@@ -1,7 +1,7 @@
 <template lang="pug">
 .flex.space-x-6
 	NuxtLink(v-for="contact in contacts", :key="contact.name", :to="contact.link", :title="contact.name")
-		Icon(:name="contact.icon", :size="size")
+		Icon(:name="contact.icon", :size="size.toString()")
 </template>
 
 <script setup lang="ts">
@@ -9,8 +9,8 @@ import type { MetaData } from '../../schema/metadata'
 
 const props = defineProps({
 	size: {
-		type: String,
-		default: ''
+		type: Number,
+		required: true
 	}
 })
 
