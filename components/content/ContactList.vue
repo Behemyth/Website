@@ -12,6 +12,7 @@ const props = defineProps({
 	}
 })
 
+// queryContent() is wrapped with useLazyAsyncData() to prevent query duplication
 const { data: contacts } = useLazyAsyncData('contacts', () =>
 	queryContent('_data')
 		.where({ _partial: true, title: 'Metadata' })

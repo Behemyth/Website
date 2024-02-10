@@ -4,4 +4,4 @@ navTitle: 'About'
 
 # About
 
-TV reviews to follow
+Show reviews to follow

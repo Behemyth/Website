@@ -17,6 +17,6 @@ const props = defineProps({
 })
 
 const recent = await queryContent('reviews', props.category)
-	.sort({ date: 1 }).find()
+	.sort({ date: 1 }).limit(3).find()
 
 </script>

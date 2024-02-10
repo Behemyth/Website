@@ -25,6 +25,11 @@ export default defineNuxtConfig({
 				dark: 'github-dark',
 				default: 'github-light'
 			}
+		},
+		experimental: {
+			search: {
+				indexed: true
+			}
 		}
 	},
 	// https://image.nuxt.com/

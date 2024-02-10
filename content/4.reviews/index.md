@@ -27,6 +27,6 @@ category: game
 ::RecentList
 ---
 size: 35
-category: tv
+category: show
 ---
 ::
