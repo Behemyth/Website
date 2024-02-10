@@ -30,5 +30,9 @@ export default defineNuxtConfig({
 	// https://image.nuxt.com/
 	image: {
 		// Options
+	},
+	alias: {
+		images: '/<rootDir>/public/images',
+		types: '/<rootDir>/types'
 	}
 })

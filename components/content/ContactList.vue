@@ -5,8 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import type { MetaData } from '../../schema/metadata'
-
 const props = defineProps({
 	size: {
 		type: Number,
@@ -15,7 +13,7 @@ const props = defineProps({
 })
 
 const { data: contacts } = useLazyAsyncData('contacts', () =>
-	queryContent<MetaData>('_data')
+	queryContent('_data')
 		.where({ _partial: true, title: 'Metadata' })
 		.findOne().then((value) => {
 			return value.contacts
