@@ -1,5 +1,6 @@
 ---
-navTitle: 'Pirates'
+navTitle: Pirates
+layout: review
 draft: true
 intRating: 2
 entRating: 3

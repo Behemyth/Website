@@ -1,4 +1,5 @@
 ---
-navTitle: 'Age of Empires'
+navTitle: Age of Empires
+layout: review
 draft: true
 ---

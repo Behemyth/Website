@@ -1,6 +1,6 @@
 <template lang="pug">
 .flex.space-x-6
-	span(v-for="item in recent", :key="item.category") {{ item.title }}
+	span(v-for="review in reviews", :key="review.category") {{ review.title }}
 </template>
 
 <script setup lang="ts">
@@ -16,7 +16,8 @@ const props = defineProps({
 	}
 })
 
-const recent = await queryContent('reviews', props.category)
+const reviews = await queryContent('reviews', props.category)
+	.where({ layout: 'review' })
 	.sort({ date: 1 }).limit(3).find()
 
 </script>
