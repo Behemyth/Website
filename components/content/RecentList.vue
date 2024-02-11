@@ -1,6 +1,6 @@
 <template lang="pug">
 .flex.space-x-6
-	span(v-for="review in reviews", :key="review.category") {{ review.title }}
+	ReviewPreview(v-for="review in reviews", :key="review.category", :content="review")
 </template>
 
 <script setup lang="ts">
