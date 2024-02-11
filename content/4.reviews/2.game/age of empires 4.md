@@ -1,7 +1,6 @@
 ---
 navTitle: Age of Empires 4
 layout: review
-draft: true
 ---
 
 # Age of Empires 4
