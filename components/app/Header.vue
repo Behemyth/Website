@@ -15,6 +15,7 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 				src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?s=200",
 				class="md:h-12",
 				alt="Asher's Face"
+				preload
 			)
 
 		NavSearch.hidden(
