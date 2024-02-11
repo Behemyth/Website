@@ -1,22 +1,21 @@
 <template lang="pug">
 button(aria-label="Color Mode", @click="onClick")
 	ColorScheme
-		Icon(
+		Moon(
 			v-if="colorMode.preference === 'dark'",
-			name="heroicons-outline:moon",
 			size="24",
 			class="dark:text-gray-300"
 		)
-		Icon(
+		Sun.text-gray-900(
 			v-else,
-			name="heroicons-outline:sun",
 			size="24"
-			class="text-gray-900"
-
 		)
 </template>
 
 <script setup lang="ts">
+
+import Moon from '~icons/heroicons/moon'
+import Sun from '~icons/heroicons/sun'
 
 const colorMode = useColorMode()
 const onClick = () => {
