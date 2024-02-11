@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 
-import type { Social } from '../schema/metadata'
+import type { Social } from '~/types/metadata'
 
 const props = defineProps({
 	socials: {

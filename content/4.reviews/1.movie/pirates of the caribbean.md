@@ -3,6 +3,7 @@ navTitle: Pirates
 layout: review
 intRating: 2
 entRating: 3
+rating: 3
 ---
 
 # Pirates of the Caribbean

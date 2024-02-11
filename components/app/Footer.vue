@@ -11,7 +11,7 @@ footer.w-full.max-w-5xl.mx-auto.p-4.bg-white.shadow(
 				)
 				span.self-center.text-2xl.font-semibold.whitespace-nowrap(
 					class="dark:text-white"
-				) Contact
+				) {{ $t('Contact') }}
 
 		SocialIcons(:socials="socials ? socials: []", size="24")
 
@@ -22,7 +22,7 @@ footer.w-full.max-w-5xl.mx-auto.p-4.bg-white.shadow(
 </template>
 
 <script setup lang="ts">
-import type { MetaData } from '../../schema/metadata'
+import type { MetaData } from '~/types/metadata'
 
 const { data: socials } = useLazyAsyncData('socials', () =>
 	queryContent<MetaData>('_data')
@@ -32,3 +32,4 @@ const { data: socials } = useLazyAsyncData('socials', () =>
 		})
 )
 </script>
+~/types/types

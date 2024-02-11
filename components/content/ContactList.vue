@@ -5,6 +5,9 @@
 </template>
 
 <script setup lang="ts">
+
+import type { MetaData } from '~/types/metadata'
+
 const props = defineProps({
 	size: {
 		type: Number,
@@ -14,7 +17,7 @@ const props = defineProps({
 
 // queryContent() is wrapped with useAsyncData() to prevent query duplication
 const { data: contacts } = useAsyncData('contacts', () =>
-	queryContent('_data')
+	queryContent<MetaData>('_data')
 		.where({ _partial: true, title: 'Metadata' })
 		.findOne().then((value) => {
 			return value.contacts

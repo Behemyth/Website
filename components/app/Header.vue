@@ -25,6 +25,7 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 			:navigation="navigation",
 			class="md:hidden"
 		)
+		LanguageSwitch()
 		ColorModeSwitch.flex-none.p-2(
 			class="md:p-4 hover:text-gray-700 dark:hover:text-gray-300"
 		)
