@@ -18,6 +18,9 @@ function updateLocale(event: any) {
 
 onMounted(() => {
 	const languageSwitcher = document.querySelector('#languageSwitcher')
-	languageSwitcher.value = locale.value
+
+	if (languageSwitcher) {
+		languageSwitcher.value = locale.value
+	}
 })
 </script>
