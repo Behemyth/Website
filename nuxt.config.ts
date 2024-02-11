@@ -6,7 +6,8 @@ export default defineNuxtConfig({
 		'@nuxtjs/color-mode',
 		'@nuxt/devtools',
 		'nuxt-icon',
-		'@nuxtjs/tailwindcss'
+		'@nuxtjs/tailwindcss',
+		'@nuxt/image'
 	],
 	// https://color-mode.nuxtjs.org
 	colorMode: {
@@ -24,6 +25,19 @@ export default defineNuxtConfig({
 				dark: 'github-dark',
 				default: 'github-light'
 			}
+		},
+		experimental: {
+			search: {
+				indexed: true
+			}
 		}
+	},
+	// https://image.nuxt.com/
+	image: {
+		// Options
+	},
+	alias: {
+		images: '/<rootDir>/public/images',
+		types: '/<rootDir>/types'
 	}
 })

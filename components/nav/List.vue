@@ -6,8 +6,7 @@
 		v-for="link of props.list"
 		:key="link._path"
 		:to="link._path"
-		active-class="font-bold"
-		class="dark:text-gray-400"
+		class="dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
 	) {{ link.navTitle || link.title }}
 </template>
 
