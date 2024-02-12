@@ -1,16 +1,14 @@
 <template lang="pug">
-button(aria-label="Color Mode", @click="onClick")
+button.inline-block.w-6(aria-label="Color Mode", @click="onClick")
 	ColorScheme
-		Icon(
+		Icon.w-6.h-6(
 			v-if="colorMode.preference === 'dark'",
 			name="heroicons:moon"
-			size="24"
 			class="dark:text-gray-300"
 		)
-		Icon.text-gray-900(
+		Icon.w-6.h-6.text-gray-900(
 			v-else,
 			name="heroicons:sun"
-			size="24"
 		)
 </template>
 

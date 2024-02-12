@@ -2,7 +2,7 @@
 nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 	class="dark:bg-gray-900"
 )
-	.flex.items-center.justify-between.mx-auto
+	.flex.items-center.justify-evenly.mx-auto
 		NavList.hidden(
 			:list="navigation? navigation: []"
 			class="md:flex"
@@ -27,8 +27,8 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 			class="md:hidden"
 		)
 		LanguageSwitch()
-		ColorModeSwitch.flex-none.p-2(
-			class="md:p-4 hover:text-gray-700 dark:hover:text-gray-300"
+		ColorModeSwitch(
+			class="hover:text-gray-700 dark:hover:text-gray-300"
 		)
 </template>
 
