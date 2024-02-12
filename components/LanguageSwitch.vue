@@ -1,6 +1,6 @@
 <template lang="pug">
-.flex.items-center
-	select.rounded-md.text-sm.p-1(id="languageSwitcher" @change="updateLocale")
+.flex.items-center.text-gray-500(class="dark:text-gray-400")
+	select.rounded-md.text-sm.p-1.bg-white(id="languageSwitcher" class="dark:bg-gray-900" @change="updateLocale")
 		option.p-1(v-for="loc in availableLocales" :key="loc.code" :value="loc.code") {{ loc.name }}
 </template>
 
