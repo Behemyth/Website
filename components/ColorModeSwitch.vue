@@ -1,23 +1,19 @@
 <template lang="pug">
-button(aria-label="Color Mode", @click="onClick")
-	// ColorScheme instead of ClientOnly
-	ClientOnly
-		Icon(
+button.inline-block.w-6(aria-label="Color Mode", @click="onClick")
+	ColorScheme
+		Icon.w-6.h-6(
 			v-if="colorMode.preference === 'dark'",
-			name="heroicons-outline:moon",
-			size="24",
+			name="heroicons:moon"
 			class="dark:text-gray-300"
 		)
-		Icon(
+		Icon.w-6.h-6.text-gray-900(
 			v-else,
-			name="heroicons-outline:sun",
-			size="24"
-			class="text-gray-900"
-
+			name="heroicons:sun"
 		)
 </template>
 
 <script setup lang="ts">
+
 const colorMode = useColorMode()
 const onClick = () => {
 	const values = ['light', 'dark']

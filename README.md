@@ -42,3 +42,11 @@ node .output/server/index.mjs
 ```
 
 Learn more on [Nuxt docs](https://v3.nuxtjs.org/guide/deploy/node-server) for more information.
+
+### Credits
+
+<img height="50px" src="./public/images/tmdb.svg">
+
+Data provided by [The Movie Database](https://www.themoviedb.org).
+
+This project uses the TMDB API but is not endorsed or certified by TMDB.

@@ -7,7 +7,8 @@ export default defineNuxtConfig({
 		'@nuxt/devtools',
 		'nuxt-icon',
 		'@nuxtjs/tailwindcss',
-		'@nuxt/image'
+		'@nuxt/image',
+		'@nuxtjs/i18n'
 	],
 	// https://color-mode.nuxtjs.org
 	colorMode: {
@@ -34,10 +35,36 @@ export default defineNuxtConfig({
 	},
 	// https://image.nuxt.com/
 	image: {
-		// Options
+		provider: 'proxy',
+		providers: {
+			proxy: {
+				provider: 'ipx'
+			}
+		}
 	},
-	alias: {
-		images: '/<rootDir>/public/images',
-		types: '/<rootDir>/types'
+	devtools: {
+		enabled: true
+	},
+	i18n: {
+		detectBrowserLanguage: {
+			useCookie: true,
+			fallbackLocale: 'en'
+		},
+		strategy: 'no_prefix',
+		locales: [
+			{
+				code: 'en',
+				name: 'English',
+				file: 'en.json'
+			},
+			{
+				code: 'pl',
+				name: 'Polski',
+				file: 'pl.json'
+			}
+		],
+		lazy: true,
+		langDir: 'locales',
+		defaultLocale: 'en'
 	}
 })

@@ -1,9 +1,9 @@
 ---
 navTitle: Pirates
 layout: review
-draft: true
 intRating: 2
 entRating: 3
+rating: 3
 ---
 
 # Pirates of the Caribbean
