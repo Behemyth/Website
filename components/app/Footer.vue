@@ -4,7 +4,7 @@ footer.w-full.max-w-5xl.mx-auto.p-4.bg-white.shadow(
 )
 	.flex.items-center.justify-between
 		.mb-6(class="sm:mb-0")
-			NuxtLink.flex.items-center(to="contact")
+			NuxtLink.flex.items-center(to="/contact", rel="author")
 				NuxtImg.mr-3.h-12.rounded-full(
 					src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?s=200",
 					alt="Asher's Face"

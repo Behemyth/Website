@@ -10,6 +10,7 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 		NuxtLink.flex.flex-none.items-center.p-2(
 			to="/contact",
 			class="md:p-4",
+			rel="author"
 		)
 			NuxtImg.h-9.mr-1.rounded-full(
 				src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?s=200",
@@ -33,6 +34,6 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 </template>
 
 <script setup lang="ts">
-const { data: navigation } = useLazyAsyncData('navigation', () => fetchContentNavigation())
+const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
 
 </script>
