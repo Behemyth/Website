@@ -15,7 +15,6 @@
 		"@nuxtjs/tailwindcss": "^6.11.3"
 	},
 	"devDependencies": {
-		"@iconify/json": "^2.2.181",
 		"@nuxt/image": "^1.3.0",
 		"@nuxtjs/eslint-config-typescript": "^12.1.0",
 		"@nuxtjs/i18n": "latest",
@@ -26,8 +25,8 @@
 		"eslint-plugin-vue": "^9.21.1",
 		"eslint-plugin-vue-pug": "^0.6.1",
 		"nuxt": "^3.10.1",
+		"nuxt-icon": "^0.6.8",
 		"typescript": "^5.3.3",
-		"unplugin-icons": "^0.18.5",
 		"vite-plugin-pug": "^0.3.1",
 		"vue-tsc": "latest"
 	}

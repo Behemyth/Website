@@ -1,7 +1,7 @@
 <template lang="pug">
 .flex.space-x-6
 	NuxtLink(v-for="contact in contacts", :key="contact.name", :to="contact.link", :title="contact.name")
-		//- Icon(:name="contact.icon", :size="props.size.toString()")
+		Icon(:name="contact.icon", :size="props.size.toString()")
 </template>
 
 <script setup lang="ts">
