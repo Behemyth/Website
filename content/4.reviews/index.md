@@ -13,7 +13,7 @@ category: movie
 ---
 ::
 
-### Recent Game Reviews
+<!-- ### Recent Game Reviews
 
 ::RecentList
 ---
@@ -29,4 +29,4 @@ category: game
 size: 35
 category: show
 ---
-::
+:: -->
