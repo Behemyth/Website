@@ -1,7 +1,7 @@
 <template lang="pug">
 .max-w-sm.bg-white.border.border-gray-200.rounded-lg.shadow(class="dark:bg-gray-800 dark:border-gray-700")
 	NuxtLink(:to="props.content._path", :title="data?.title")
-		NuxtImg(:src="imgUrl", :alt="data?.title", class="rounded-t-lg")
+		NuxtImg(:src="imgUrl", :alt="data?.title", class="rounded-t-lg" preload)
 	.p-5
 		NuxtLink(:to="props.content._path", :title="data?.title")
 			h5.mb-2.text-2xl.font-bold.tracking-tight.text-gray-900(class="dark:text-white") {{ data?.title }}
@@ -11,7 +11,7 @@
 <script setup lang="ts">
 
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
-import type { Movie } from '~/types/movie'
+import type { Media } from '~/types/tmdb'
 
 interface Review extends ParsedContent {
 }
@@ -25,8 +25,9 @@ const props = defineProps({
 
 // TODO: Make a composable for this
 const config = useRuntimeConfig()
-const imgUrl = computed(() => data.value?.poster_path ? `${config.public.imageBase}/${data.value?.poster_path}` : '/images/tmbd.svg')
+const imgUrl = computed(() => data.value?.backdrop_path ? `${config.public.imageBase}/${data.value?.backdrop_path}` : '/images/tmdb.svg')
 
-const { data } = await useFetch<Movie>(`/api/movies/${props.content.TMDB_ID}`)
+const { data } = await useFetch<Media>(`/api/media/${props.content.TMDB_ID}`)
 
 </script>
+~/types/tqdm
