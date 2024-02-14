@@ -13,15 +13,7 @@ category: movie
 ---
 ::
 
-<!-- ### Recent Game Reviews
-
-::RecentList
----
-size: 35
-category: game
----
-::
-
+<!--
 ### Recent TV Reviews
 
 ::RecentList
@@ -29,4 +21,5 @@ category: game
 size: 35
 category: show
 ---
-:: -->
+::
+-->
