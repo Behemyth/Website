@@ -13,8 +13,9 @@ category: movie
 ---
 ::
 
+[All Movie Reviews](/reviews/movie)
 
-### Recent TV Reviews
+### Recent Show Reviews
 
 ::RecentList
 ---
@@ -23,3 +24,4 @@ category: show
 ---
 ::
 
+[All Show Reviews](/reviews/show)
