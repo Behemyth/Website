@@ -13,7 +13,7 @@ category: movie
 ---
 ::
 
-<!--
+
 ### Recent TV Reviews
 
 ::RecentList
@@ -22,4 +22,4 @@ size: 35
 category: show
 ---
 ::
--->
+
