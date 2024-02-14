@@ -12,4 +12,5 @@ export type Media = {
 	media_type?: MediaType
 	genres: Genre[]
 	release_date?: string
+	poster_path: string
 }

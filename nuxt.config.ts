@@ -9,7 +9,8 @@ export default defineNuxtConfig({
 		'nuxt-icon',
 		'@nuxtjs/tailwindcss',
 		'@nuxt/image',
-		'@nuxtjs/i18n'
+		'@nuxtjs/i18n',
+		'nuxt-content-git'
 	],
 	// https://color-mode.nuxtjs.org
 	colorMode: {
