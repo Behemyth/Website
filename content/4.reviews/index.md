@@ -13,20 +13,15 @@ category: movie
 ---
 ::
 
-<!-- ### Recent Game Reviews
+[All Movie Reviews](/reviews/movie)
 
-::RecentList
----
-size: 35
-category: game
----
-::
-
-### Recent TV Reviews
+### Recent Show Reviews
 
 ::RecentList
 ---
 size: 35
 category: show
 ---
-:: -->
+::
+
+[All Show Reviews](/reviews/show)
