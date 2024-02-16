@@ -2,7 +2,7 @@
 layout: review
 intRating: 4
 entRating: 8
-rating: 7
+rating: 8
 TMDB_ID: 76341
 date: 2024-02-013
 ---
