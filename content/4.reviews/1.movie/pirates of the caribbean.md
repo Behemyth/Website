@@ -1,8 +1,8 @@
 ---
 layout: review
-intRating: 2
-entRating: 3
-rating: 3
+intRating: 4
+entRating: 6
+rating: 6
 TMDB_ID: 22
 date: 2024-02-012
 ---
