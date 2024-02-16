@@ -3,7 +3,7 @@ div
 	UButton(icon="i-mdi-hamburger-menu" color="primary" square label="Open" @click="isOpen = true")
 		span.sr-only Open main menu
 	USlideover(v-model="isOpen" side="left")
-		UVerticalNavigation(:links="links" @click="isOpen = false")
+		UVerticalNavigation(:links="links" :ui="{size: 'text-2xl'}" @click="isOpen = false" )
 </template>
 
 <script setup lang="ts">
