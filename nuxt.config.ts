@@ -36,12 +36,6 @@ export default defineNuxtConfig({
 	},
 	// https://image.nuxt.com/
 	image: {
-		provider: 'proxy',
-		providers: {
-			proxy: {
-				provider: 'ipx'
-			}
-		}
 	},
 	devtools: {
 		enabled: true
