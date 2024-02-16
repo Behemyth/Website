@@ -20,7 +20,7 @@ footer.w-full.max-w-5xl.mx-auto.p-4.bg-white.shadow(
 	.flex.items-center.justify-between
 		span.text-sm.text-gray-500(class="sm:text-center dark:text-gray-400") Copyright &copy; {{ new Date().getFullYear() }}
 		LanguageSwitch
-		span.flex.mt-4.text-sm.text-gray-500(class="sm:justify-center sm:mt-0") Made with ❤️ by Asher and Ola
+		span.flex.text-sm.text-gray-500(class="sm:justify-center") Made with ❤️ by Asher and Ola
 </template>
 
 <script setup lang="ts">
