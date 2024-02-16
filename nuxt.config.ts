@@ -35,12 +35,18 @@ export default defineNuxtConfig({
 	},
 	// https://image.nuxt.com/
 	image: {
+		format: ['webp'],
+		domains: ['www.gravatar.com', 'image.tmdb.org'],
+		dir: 'public/images'
 	},
 	devtools: {
 		enabled: true
 	},
 	typescript: {
 		strict: true
+	},
+	nitro: {
+		static: true
 	},
 	i18n: {
 		detectBrowserLanguage: {
@@ -61,7 +67,7 @@ export default defineNuxtConfig({
 			}
 		],
 		lazy: true,
-		langDir: 'locales',
+		langDir: 'locales/',
 		defaultLocale: 'en'
 	},
 	runtimeConfig: {
