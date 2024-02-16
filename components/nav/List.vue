@@ -1,8 +1,8 @@
 <template lang="pug">
 .flex.flex-row.items-center.justify-between.space-x-4.p-2(
-	id="navbar-search"
+	id="navbar"
 )
-	NuxtLink.px-2.text-gray-700(
+	ULink.px-2.text-gray-700(
 		v-for="link of props.list"
 		:key="link._path"
 		:to="link._path"

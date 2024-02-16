@@ -1,29 +1,29 @@
 socials:
   - name: Github
-    icon: fa-brands:github
+    icon: i-mdi-github
     link: https://github.com/Behemyth
   - name: Instagram
-    icon: fa-brands:instagram
+    icon: i-mdi-instagram
     link: https://www.instagram.com/behemythic
   - name: Google Scholar
-    icon: academicons:google-scholar
+    icon: i-mdi-school
     link: https://scholar.google.com/citations?user=9TCQH78AAAAJ&hl=en
   - name: LinkedIn
-    icon: fa-brands:linkedin-in
+    icon: i-mdi-linkedin
     link: https://www.linkedin.com/in/asher-norland
   - name: Youtube
-    icon: fa-brands:youtube
+    icon: i-mdi-youtube
     link: https://www.youtube.com/@asher-norland
 contacts:
   - name: Email
-    icon: fa6-regular:envelope
+    icon: i-mdi-email
     link: mailto:asher.norland@gmail.com
   - name: Phone
-    icon: fa:phone
+    icon: i-mdi-phone
     link: tel:+1218-206-3918
   - name: WhatsApp
-    icon: fa6-brands:whatsapp
+    icon: i-mdi-whatsapp
     link: https://wa.me/12182063918
   - name: Signal
-    icon: mdi:chat
+    icon: i-mdi-chat
     link: https://signal.me/#p/+12182063918

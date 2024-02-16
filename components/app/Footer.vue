@@ -3,7 +3,7 @@ footer.w-full.max-w-5xl.mx-auto.p-4.bg-white.shadow(
 	class="dark:bg-gray-900"
 )
 	.flex.items-center.justify-between
-		NuxtLink.flex.items-center(to="/contact", rel="author")
+		ULink.flex.items-center(to="/contact", rel="author")
 			NuxtImg.mr-3.h-12.rounded-full(
 				src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?s=200",
 				alt="Asher's Face"
@@ -13,7 +13,7 @@ footer.w-full.max-w-5xl.mx-auto.p-4.bg-white.shadow(
 				class="dark:text-white"
 			) {{ $t('Contact') }}
 
-		SocialIcons(:socials="socials ? socials: []", :size="24")
+		SocialIcons(:socials="socials ? socials: []")
 
 	hr.my-4.border-gray-200(class="sm:mx-auto dark:border-gray-700")
 	.flex.items-center.justify-between
