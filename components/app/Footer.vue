@@ -14,7 +14,7 @@ footer.w-full.max-w-5xl.mx-auto.p-4.bg-white.shadow(
 					class="dark:text-white"
 				) {{ $t('Contact') }}
 
-		SocialIcons(:socials="socials ? socials: []", size="24")
+		SocialIcons(:socials="socials ? socials: []", :size="24")
 
 	hr.my-4.border-gray-200(class="sm:mx-auto dark:border-gray-700")
 	.flex.items-center.justify-between

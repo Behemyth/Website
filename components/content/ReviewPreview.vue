@@ -4,7 +4,7 @@ NuxtLink.h-32.flex.w-full.items-center.bg-white.border.border-gray-200.rounded-l
 	.flex.flex-col.justify-between.p-4.leading-normal
 		h5.mb-2.font-bold.tracking-tight.text-gray-900(class="md:text-l lg:text-xl dark:text-white") {{ data?.title }}
 		Rating(:value="content.rating" :size="16")
-		p.mb-3.font-normal.text-gray-700(v-if="false" class="dark:text-gray-400") Description
+		p.mb-3.font-normal.text-gray-700(class="dark:text-gray-400") {{ content.description }}
 </template>
 
 <script setup lang="ts">
