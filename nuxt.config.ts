@@ -39,6 +39,9 @@ export default defineNuxtConfig({
 	devtools: {
 		enabled: true
 	},
+	typescript: {
+		strict: true
+	},
 	i18n: {
 		detectBrowserLanguage: {
 			useCookie: true,
