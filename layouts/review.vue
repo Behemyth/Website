@@ -1,8 +1,6 @@
 <template lang="pug">
-div
-	main.prose.max-w-5xl.px-4.py-4.mx-auto(class="dark:prose-invert")
-		slot
-
+main.prose.max-w-5xl.px-4.py-4.mx-auto(class="dark:prose-invert")
+	slot
 	div(id="commento")
 </template>
 
