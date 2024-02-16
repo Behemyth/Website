@@ -9,18 +9,13 @@ ULink.h-32.flex.w-full.items-center.bg-white.border.border-gray-200.rounded-lg.s
 
 <script setup lang="ts">
 
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 import type { Media } from '~/types/tmdb'
 
-interface Review extends ParsedContent {
-	intRating: number,
-	entRating: number,
-	rating: number
-}
+import type { NuxtContentReview } from '~/types/movie'
 
 const props = defineProps({
 	content: {
-		type: Object as () => Review,
+		type: Object as () => NuxtContentReview,
 		required: true
 	}
 })

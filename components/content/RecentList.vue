@@ -6,6 +6,8 @@ span.text-sm.text-gray-500(class="sm:text-center dark:text-gray-400") These revi
 
 <script setup lang="ts">
 
+import type { NuxtContentReview } from '~/types/movie'
+
 const props = defineProps({
 	size: {
 		type: Number,
@@ -17,7 +19,7 @@ const props = defineProps({
 	}
 })
 
-const reviews = await queryContent('reviews', props.category)
+const reviews = await queryContent<NuxtContentReview>('reviews', props.category)
 	.where({ layout: 'review' })
 	.sort({ date: -1 }).limit(4).find()
 
