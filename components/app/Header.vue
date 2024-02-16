@@ -4,10 +4,14 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 )
 	.flex.items-center.justify-evenly.mx-auto
 		NavList.hidden(
-			:list="navigation? navigation: []"
+			:list="navigation"
 			class="md:flex"
 		)
-		NuxtLink.flex.flex-none.items-center.p-2(
+		NavListButton(
+			:list="navigation"
+			class="md:hidden"
+		)
+		ULink.flex.flex-none.items-center.p-2(
 			to="/contact",
 			class="md:p-4",
 			rel="author"
@@ -19,21 +23,20 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 				preload
 			)
 
-		NavSearch.hidden(
-			:navigation="navigation",
-			class="md:flex"
-		)
-		NavSearchButton(
-			:navigation="navigation",
-			class="md:hidden"
-		)
-
+		//- NavSearch.hidden(
+		//- 	:navigation="navigation",
+		//- 	class="md:flex"
+		//- )
+		//- NavSearchButton(
+		//- 	:navigation="navigation",
+		//- 	class="md:hidden"
+		//- )
 		ColorModeSwitch(
 			class="hover:text-gray-700 dark:hover:text-gray-300"
 		)
 </template>
 
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
+const navigation = await fetchContentNavigation()
 
 </script>

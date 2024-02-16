@@ -3,17 +3,16 @@ export default defineNuxtConfig({
 	ssr: true,
 	modules: [
 		'@nuxt/content',
-		'@nuxtjs/tailwindcss',
-		'@nuxtjs/color-mode',
 		'@nuxt/devtools',
-		'nuxt-icon',
-		'@nuxtjs/tailwindcss',
 		'@nuxt/image',
-		'@nuxtjs/i18n'
+		'@nuxtjs/i18n',
+		'@nuxt/ui'
 	],
 	// https://color-mode.nuxtjs.org
 	colorMode: {
-		classSuffix: ''
+	},
+	ui: {
+		icons: ['mdi']
 	},
 	// https://content.nuxtjs.org
 	content: {
@@ -39,6 +38,9 @@ export default defineNuxtConfig({
 	},
 	devtools: {
 		enabled: true
+	},
+	typescript: {
+		strict: true
 	},
 	i18n: {
 		detectBrowserLanguage: {

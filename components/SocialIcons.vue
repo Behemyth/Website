@@ -1,9 +1,8 @@
 <template lang="pug">
 .flex.space-x-6
-	NuxtLink(v-for="social in socials", :key="social.name", :to="social.link", :title="social.name")
-		Icon(
+	ULink(v-for="social in props.socials", :key="social.name", :to="social.link", :title="social.name")
+		UIcon.shrink-0.w-6.h-6.align-middle(
 			:name="social.icon",
-			:size="size.toString()",
 			class="text-gray-900 dark:text-gray-300"
 		)
 </template>
@@ -16,20 +15,7 @@ const props = defineProps({
 	socials: {
 		type: Array<Social>,
 		required: true
-	},
-	size: {
-		type: Number,
-		required: true
 	}
-})
-
-const socials = computed(() => {
-	const socials = props.socials
-	return socials
-})
-const size = computed(() => {
-	const size = props.size
-	return size
 })
 
 </script>
