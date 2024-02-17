@@ -56,7 +56,12 @@ export default defineNuxtConfig({
 		strict: true
 	},
 	nitro: {
-		static: true
+		static: true,
+		prerender: {
+			crawlLinks: true,
+			routes: [
+				'/']
+		}
 	},
 	i18n: {
 		detectBrowserLanguage: {
