@@ -22,7 +22,6 @@ jobs:
     env:
       NUXT_API_SECRET: ${{ secrets.NUXT_API_SECRET }}
       NUXT_PUBLIC_API_BASE: ${{ secrets.NUXT_PUBLIC_API_BASE }}
-      NUXT_PUBLIC_IMAGE_BASE: ${{ secrets.NUXT_PUBLIC_IMAGE_BASE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

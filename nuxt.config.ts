@@ -16,6 +16,12 @@ export default defineNuxtConfig({
 	},
 	// https://content.nuxtjs.org
 	content: {
+		markdown: {
+			toc: {
+				depth: 3,
+				searchDepth: 3
+			}
+		},
 		documentDriven: true,
 		navigation: {
 			fields: ['navTitle']
@@ -35,12 +41,22 @@ export default defineNuxtConfig({
 	},
 	// https://image.nuxt.com/
 	image: {
+		format: ['webp'],
+		domains: ['www.gravatar.com', 'image.tmdb.org'],
+		alias: {
+			tmdb: 'https://image.tmdb.org/t/p/original',
+			gravatar: 'https://www.gravatar.com'
+		},
+		dir: '/public'
 	},
 	devtools: {
 		enabled: true
 	},
 	typescript: {
 		strict: true
+	},
+	nitro: {
+		static: true
 	},
 	i18n: {
 		detectBrowserLanguage: {
@@ -67,8 +83,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
 		public: {
-			apiBase: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
-			imageBase: '' // can be overridden by NUXT_PUBLIC_IMAGE_BASE environment variable
+			apiBase: '' // can be overridden by NUXT_PUBLIC_API_BASE environment variable
 		}
 	}
 })

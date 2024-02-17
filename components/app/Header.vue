@@ -16,21 +16,12 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 			class="md:p-4",
 			rel="author"
 		)
-			NuxtImg.h-9.mr-1.rounded-full(
-				src="https://www.gravatar.com/avatar/293a56bef971ab4999d6230491957d33?s=200",
-				class="md:h-12",
-				alt="Asher's Face"
+			NuxtPicture(
+				src="/gravatar/avatar/293a56bef971ab4999d6230491957d33",
+				:img-attrs="{class:'h-9 md:h-12 mr-1 rounded-full'}"
 				preload
 			)
 
-		//- NavSearch.hidden(
-		//- 	:navigation="navigation",
-		//- 	class="md:flex"
-		//- )
-		//- NavSearchButton(
-		//- 	:navigation="navigation",
-		//- 	class="md:hidden"
-		//- )
 		ColorModeSwitch(
 			class="hover:text-gray-700 dark:hover:text-gray-300"
 		)
