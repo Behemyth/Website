@@ -2,12 +2,12 @@
 nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 	class="dark:bg-gray-900"
 )
-	.flex.items-center.justify-evenly.mx-auto
+	.flex.items-center.justify-around.mx-auto(class="md:justify-evenly")
 		NavList.hidden(
 			:list="navigation"
 			class="md:flex"
 		)
-		NavListButton(
+		NavListButton.h-full.aspect-square(
 			:list="navigation"
 			class="md:hidden"
 		)
