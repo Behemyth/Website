@@ -35,9 +35,12 @@ export default defineNuxtConfig({
 	},
 	// https://image.nuxt.com/
 	image: {
-		format: ['webp'],
 		domains: ['www.gravatar.com', 'image.tmdb.org'],
-		dir: 'public/images'
+		alias: {
+			tmdb: 'https://image.tmdb.org/t/p/original',
+			gravatar: 'https://www.gravatar.com'
+		},
+		dir: '/public'
 	},
 	devtools: {
 		enabled: true
@@ -67,14 +70,13 @@ export default defineNuxtConfig({
 			}
 		],
 		lazy: true,
-		langDir: 'locales/',
+		langDir: 'locales',
 		defaultLocale: 'en'
 	},
 	runtimeConfig: {
 		apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
 		public: {
-			apiBase: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
-			imageBase: '' // can be overridden by NUXT_PUBLIC_IMAGE_BASE environment variable
+			apiBase: '' // can be overridden by NUXT_PUBLIC_API_BASE environment variable
 		}
 	}
 })
