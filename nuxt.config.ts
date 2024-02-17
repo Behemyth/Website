@@ -16,6 +16,12 @@ export default defineNuxtConfig({
 	},
 	// https://content.nuxtjs.org
 	content: {
+		markdown: {
+			toc: {
+				depth: 3,
+				searchDepth: 3
+			}
+		},
 		documentDriven: true,
 		navigation: {
 			fields: ['navTitle']
@@ -35,6 +41,7 @@ export default defineNuxtConfig({
 	},
 	// https://image.nuxt.com/
 	image: {
+		format: ['webp'],
 		domains: ['www.gravatar.com', 'image.tmdb.org'],
 		alias: {
 			tmdb: 'https://image.tmdb.org/t/p/original',
