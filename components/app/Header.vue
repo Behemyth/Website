@@ -2,15 +2,14 @@
 nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 	class="dark:bg-gray-900"
 )
-	.flex.items-center.justify-evenly.mx-auto
-		NavList.hidden(
-			:list="navigation"
-			class="md:flex"
-		)
-		NavListButton(
-			:list="navigation"
-			class="md:hidden"
-		)
+	.flex.items-center.justify-around.mx-auto(class="md:justify-evenly")
+		.hidden(class="md:flex")
+			UHorizontalNavigation.border-b.border-gray-200(:links="links" class="dark:border-gray-800")
+		.h-full.aspect-square(class="md:hidden")
+			UButton(icon="i-mdi-hamburger-menu" color="primary" square label="Open" @click="isOpen = true")
+				span.sr-only Open main menu
+			USlideover(v-model="isOpen" side="left")
+				UVerticalNavigation(:links="links" :ui="{size: 'text-2xl'}" @click="isOpen = false" )
 		ULink.flex.flex-none.items-center.p-2(
 			to="/contact",
 			class="md:p-4",
@@ -28,6 +27,18 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 </template>
 
 <script setup lang="ts">
+
+const isOpen = ref(false)
+
 const navigation = await fetchContentNavigation()
+
+const links = computed(() => {
+	return navigation.map((link: any) => {
+		return {
+			label: link.navTitle || link.title,
+			to: link._path
+		}
+	})
+})
 
 </script>
