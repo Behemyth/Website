@@ -47,7 +47,7 @@ export default defineNuxtConfig({
 			tmdb: 'https://image.tmdb.org/t/p/original',
 			gravatar: 'https://www.gravatar.com'
 		},
-		dir: '/public'
+		dir: 'public'
 	},
 	devtools: {
 		enabled: true
@@ -56,11 +56,10 @@ export default defineNuxtConfig({
 		strict: true
 	},
 	nitro: {
-		static: true,
+		// static: true, // Not set, to support 'dev' server. Default is `static: true` for 'start' and 'generate' commands
 		prerender: {
 			crawlLinks: true,
-			routes: [
-				'/']
+			interval: 50 // 50ms to avoid rate limiting of the TMDB API
 		}
 	},
 	i18n: {
