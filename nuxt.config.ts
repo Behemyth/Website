@@ -8,6 +8,11 @@ export default defineNuxtConfig({
 		'@nuxtjs/i18n',
 		'@nuxt/ui'
 	],
+	// https://nuxt.com/docs/guide/going-further/debugging
+	sourcemap: {
+		server: true,
+		client: true
+	},
 	// https://color-mode.nuxtjs.org
 	colorMode: {
 	},
