@@ -9,11 +9,15 @@ ULink.h-32.flex.w-full.items-center.bg-white.border.border-gray-200.rounded-lg.s
 
 <script setup lang="ts">
 
-import type { Media } from '~/types/tmdb'
+import type { Media, MediaType } from '~/types/tmdb'
 
 import type { NuxtContentReview } from '~/types/movie'
 
 const props = defineProps({
+	type: {
+		type: Object as () => MediaType,
+		required: true
+	},
 	content: {
 		type: Object as () => NuxtContentReview,
 		required: true
@@ -24,7 +28,7 @@ const imgURL = computed(() => {
 	return data.value?.poster_path ? `/tmdb${data.value?.poster_path}` : '/images/tmdb.svg'
 })
 
-const { data } = await useFetch<Media>(`/api/media/${props.content.TMDB_ID}`)
+const { data } = await useFetch<Media>(`/api/tmdb/media/${props.type}/${props.content.TMDB_ID}`)
 
 </script>
 ~/types/tqdm

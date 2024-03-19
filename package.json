@@ -11,13 +11,15 @@
 	"dependencies": {
 		"@nuxt/content": "^2.12.1",
 		"@nuxt/ui": "^2.14.2",
-		"feed": "^4.2.2"
+		"feed": "^4.2.2",
+		"zod": "^3.22.4"
 	},
 	"devDependencies": {
 		"@iconify-json/mdi": "^1.1.64",
 		"@nuxt/image": "^1.4.0",
 		"@nuxtjs/eslint-config-typescript": "^12.1.0",
 		"@nuxtjs/i18n": "latest",
+		"@nuxtjs/sitemap": "^5.1.2",
 		"@vue/language-plugin-pug": "^2.0.6",
 		"eslint": "^8.57.0",
 		"eslint-plugin-pug": "^1.2.5",

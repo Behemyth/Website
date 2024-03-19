@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxt/content',
 		'@nuxt/devtools',
+		'@nuxtjs/sitemap',
 		'@nuxt/image',
 		'@nuxtjs/i18n',
 		'@nuxt/ui'
@@ -18,6 +19,9 @@ export default defineNuxtConfig({
 	},
 	ui: {
 		icons: ['mdi']
+	},
+	site: {
+		url: 'https://ashernorland.com'
 	},
 	// https://content.nuxtjs.org
 	content: {
@@ -64,7 +68,8 @@ export default defineNuxtConfig({
 		// static: true, // Not set, to support 'dev' server. Default is `static: true` for 'start' and 'generate' commands
 		prerender: {
 			crawlLinks: true,
-			interval: 50 // 50ms to avoid rate limiting of the TMDB API
+			interval: 50, // 50ms to avoid rate limiting of the TMDB API
+			routes: ['/rss']
 		}
 	},
 	i18n: {
