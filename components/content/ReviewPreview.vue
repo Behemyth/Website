@@ -9,13 +9,13 @@ ULink.h-32.flex.w-full.items-center.bg-white.border.border-gray-200.rounded-lg.s
 
 <script setup lang="ts">
 
-import type { Media, MediaType } from '~/types/tmdb'
+import type { Media } from '~/types/tmdb'
 
 import type { NuxtContentReview } from '~/types/movie'
 
 const props = defineProps({
 	type: {
-		type: Object as () => MediaType,
+		type: String,
 		required: true
 	},
 	content: {

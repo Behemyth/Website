@@ -31,7 +31,7 @@ const type = computed(() => {
 		throw new TypeError('No ' + props.category + ' type')
 	}
 	}
-})
+}).value
 
 const reviews = await queryContent<NuxtContentReview>('reviews', props.category)
 	.where({ layout: 'review' })
