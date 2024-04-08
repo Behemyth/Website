@@ -22,7 +22,7 @@
 		"@vue/language-plugin-pug": "^2.0.10",
 		"eslint": "^8.57.0",
 		"eslint-plugin-pug": "^1.2.5",
-		"eslint-plugin-vue": "^9.24.0",
+		"eslint-plugin-vue": "^9.24.1",
 		"eslint-plugin-vue-pug": "^0.6.2",
 		"nuxt": "^3.11.2",
 		"typescript": "^5.4.4",
