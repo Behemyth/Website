@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@nuxt/content": "^2.12.1",
-		"@nuxt/ui": "^2.15.1",
+		"@nuxt/ui": "^2.15.2",
 		"feed": "^4.2.2"
 	},
 	"devDependencies": {
