@@ -31,4 +31,3 @@ const imgURL = computed(() => {
 const { data } = await useFetch<Media>(`/api/tmdb/media/${props.type}/${props.content.TMDB_ID}`)
 
 </script>
-~/types/tqdm
