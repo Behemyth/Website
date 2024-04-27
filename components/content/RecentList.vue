@@ -16,25 +16,29 @@ const props = defineProps({
 	category: {
 		type: String,
 		required: true
+	},
+	limit: {
+		type: Number,
+		default: 0
 	}
 })
 
 const type = computed(() => {
 	switch (props.category) {
-	case 'movie': {
-		return 'movie'
-	}
-	case 'show': {
-		return 'tv'
-	}
-	default: {
-		throw new TypeError('No ' + props.category + ' type')
-	}
+		case 'movie': {
+			return 'movie'
+		}
+		case 'show': {
+			return 'tv'
+		}
+		default: {
+			throw new TypeError('No ' + props.category + ' type')
+		}
 	}
 }).value
 
 const reviews = await queryContent<NuxtContentReview>('reviews', props.category)
 	.where({ layout: 'review' })
-	.sort({ date: -1 }).limit(4).find()
+	.sort({ date: -1 }).limit(props.limit).find()
 
 </script>

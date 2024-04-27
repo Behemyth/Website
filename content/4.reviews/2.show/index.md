@@ -5,4 +5,11 @@ navTitle: 'About'
 
 # About
 
-Show reviews to follow
+### Recent Show Reviews
+
+::RecentList
+---
+size: 35
+category: show
+---
+::
