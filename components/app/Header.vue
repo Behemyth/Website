@@ -4,7 +4,7 @@ nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 )
 	.flex.items-center.justify-around.mx-auto(class="md:justify-evenly")
 		.hidden(class="md:flex")
-			UHorizontalNavigation.border-b.border-gray-200(:links="links" class="dark:border-gray-800")
+			UHorizontalNavigation(:links="links")
 		.h-full.aspect-square(class="md:hidden")
 			UButton(icon="i-mdi-hamburger-menu" color="primary" square label="Open" @click="isOpen = true")
 				span.sr-only Open main menu
