@@ -4,15 +4,24 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxt/content',
 		'@nuxt/devtools',
+		'@nuxtjs/sitemap',
 		'@nuxt/image',
 		'@nuxtjs/i18n',
 		'@nuxt/ui'
 	],
+	// https://nuxt.com/docs/guide/going-further/debugging
+	sourcemap: {
+		server: true,
+		client: true
+	},
 	// https://color-mode.nuxtjs.org
 	colorMode: {
 	},
 	ui: {
 		icons: ['mdi']
+	},
+	site: {
+		url: 'https://ashernorland.com'
 	},
 	// https://content.nuxtjs.org
 	content: {
@@ -47,7 +56,7 @@ export default defineNuxtConfig({
 			tmdb: 'https://image.tmdb.org/t/p/original',
 			gravatar: 'https://www.gravatar.com'
 		},
-		dir: '/public'
+		dir: 'public'
 	},
 	devtools: {
 		enabled: true
@@ -56,11 +65,11 @@ export default defineNuxtConfig({
 		strict: true
 	},
 	nitro: {
-		static: true,
+		// static: true, // Not set, to support 'dev' server. Default is `static: true` for 'start' and 'generate' commands
 		prerender: {
 			crawlLinks: true,
-			routes: [
-				'/']
+			interval: 50, // 50ms to avoid rate limiting of the TMDB API
+			routes: ['/rss']
 		}
 	},
 	i18n: {

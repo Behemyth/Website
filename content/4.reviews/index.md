@@ -1,4 +1,5 @@
 ---
+layout: feed
 navTitle: 'Reviews'
 ---
 
@@ -10,6 +11,7 @@ navTitle: 'Reviews'
 ---
 size: 35
 category: movie
+limit: 4
 ---
 ::
 
@@ -21,6 +23,7 @@ category: movie
 ---
 size: 35
 category: show
+limit: 4
 ---
 ::
 

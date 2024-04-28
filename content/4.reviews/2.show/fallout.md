@@ -1,10 +1,10 @@
 ---
 layout: review
-intRating: 8
-entRating: 8
-rating: 8
-TMDB_ID: 76341
-date: 2024-02-13
+intRating: 5
+entRating: 6
+rating: 6
+TMDB_ID: 106379
+date: 2024-04-27
 description: This is a description
 ---
 

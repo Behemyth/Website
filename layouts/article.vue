@@ -1,4 +1,7 @@
 <template lang="pug">
-article.prose.max-w-5xl.px-4.py-4.mx-auto(class="dark:prose-invert")
-	slot
+article.flex.flex-col.min-h-dvh.prose.max-w-5xl.mx-auto(class="dark:prose-invert")
+	AppHeader
+	.grow.px-4.py-4
+		slot
+	AppFooter
 </template>

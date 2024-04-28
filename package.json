@@ -9,21 +9,23 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
-		"@nuxt/content": "^2.12.0",
-		"@nuxt/ui": "^2.14.2"
+		"@nuxt/content": "^2.12.1",
+		"@nuxt/ui": "^2.15.2",
+		"feed": "^4.2.2"
 	},
 	"devDependencies": {
-		"@iconify-json/mdi": "^1.1.64",
-		"@nuxt/image": "^1.4.0",
+		"@iconify-json/mdi": "^1.1.66",
+		"@nuxt/image": "^1.6.0",
 		"@nuxtjs/eslint-config-typescript": "^12.1.0",
 		"@nuxtjs/i18n": "latest",
-		"@vue/language-plugin-pug": "^2.0.5",
+		"@nuxtjs/sitemap": "^5.1.4",
+		"@vue/language-plugin-pug": "^2.0.14",
 		"eslint": "^8.57.0",
 		"eslint-plugin-pug": "^1.2.5",
-		"eslint-plugin-vue": "^9.22.0",
+		"eslint-plugin-vue": "^9.25.0",
 		"eslint-plugin-vue-pug": "^0.6.2",
-		"nuxt": "^3.10.2",
-		"typescript": "^5.3.3",
+		"nuxt": "^3.11.2",
+		"typescript": "^5.4.5",
 		"vite-plugin-pug": "^0.3.1"
 	}
 }

@@ -26,7 +26,7 @@ const halfStars = computed(() => (
 ))
 
 const noStars = computed(() => (
-	4 - props.value / 2
+	4 - fullStars.value - halfStars.value
 ))
 
 </script>

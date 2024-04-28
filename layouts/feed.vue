@@ -5,3 +5,7 @@ main.flex.flex-col.min-h-dvh.prose.max-w-5xl.mx-auto(class="dark:prose-invert")
 		slot
 	AppFooter
 </template>
+
+<script setup lang="ts">
+
+</script>

@@ -1,7 +1,10 @@
 <template lang="pug">
-main.prose.max-w-5xl.px-4.py-4.mx-auto(class="dark:prose-invert")
-	slot
+main.flex.flex-col.min-h-dvh.prose.max-w-5xl.mx-auto(class="dark:prose-invert")
+	AppHeader
+	.grow.px-4.py-4
+		slot
 	div(id="commento")
+	AppFooter
 </template>
 
 <script setup lang="ts">
