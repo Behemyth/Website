@@ -1,13 +1,13 @@
 import { toXML } from 'jstoxml'
 import { serverQueryContent } from '#content/server'
-import type { NuxtContent, NuxtFeed, Feed } from '~/types/content'
+import type { NuxtContent, NuxtFeed, RSSFeed, RSSEntry, RSSChannel } from '~/types/content'
 
 export default defineEventHandler(async (event) => {
 	const path = getRouterParam(event, 'path')
 
 	const feedContent = await serverQueryContent<NuxtFeed>(event).where({ _partial: false }).findOne()
 
-	const content: Feed = {
+	const channel: RSSChannel = {
 		title: feedContent.title,
 
 		description: feedContent.description,
@@ -30,10 +30,18 @@ export default defineEventHandler(async (event) => {
 		item: []
 	}
 
+	const entry: RSSEntry = {
+		channel
+	}
+
+	const feed: RSSFeed = {
+		rss: entry
+	}
+
 	const docs = await serverQueryContent<NuxtContent>(event).sort({ date: -1 }).where({ _partial: false }).find()
 
 	for (const post of docs) {
-		content.item.push({
+		feed.rss.channel.item.push({
 			title: post.title,
 			id: post._id,
 			link: post._path,
@@ -55,5 +63,5 @@ export default defineEventHandler(async (event) => {
 		indent: '	'
 	}
 
-	return toXML(content, config)
+	return toXML(feed, config)
 })
