@@ -1,4 +1,4 @@
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import type { NuxtContent } from '~/types/content'
 
 export type Movie = {
 	id: number
@@ -14,7 +14,7 @@ export type Movie = {
 	backdrop_path: string
 }
 
-export interface NuxtContentReview extends ParsedContent {
+export interface NuxtContentReview extends NuxtContent {
 	intRating: number,
 	entRating: number,
 	rating: number
