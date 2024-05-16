@@ -20,7 +20,7 @@
 		"@nuxtjs/i18n": "latest",
 		"@nuxtjs/sitemap": "^5.1.5",
 		"@types/jstoxml": "^2.0.4",
-		"@vue/language-plugin-pug": "^2.0.18",
+		"@vue/language-plugin-pug": "^2.0.19",
 		"eslint": "^8.57.0",
 		"eslint-plugin-pug": "^1.2.5",
 		"eslint-plugin-vue": "^9.26.0",
