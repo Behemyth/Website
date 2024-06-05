@@ -10,9 +10,9 @@ const links =
 		return value.map((content: ParsedContent) => {
 			return {
 				rel: 'alternate',
-				type: 'application/rss+xml',
 				title: content.title,
-				href: 'https://www.ashernorland.com/rss' + content._path
+				type: 'application/feed+json',
+				href: 'https://www.ashernorland.com/feed' + content._path
 			}
 		})
 	})
