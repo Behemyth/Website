@@ -65,5 +65,10 @@ export interface NuxtFeed extends ParsedContent {
 // Extended content information
 export interface NuxtContent extends ParsedContent {
 	title: string
-	date: Date
+	date_published: string
+	date_modified: string
+	description: string
+	intRating: number
+	entRating: number
+	rating: number
 }

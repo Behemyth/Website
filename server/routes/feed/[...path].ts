@@ -1,3 +1,4 @@
+import { h } from 'vue'
 import { serverQueryContent } from '#content/server'
 import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '~/types/content'
 
@@ -35,16 +36,24 @@ export default defineEventHandler(async (event) => {
 		items: []
 	}
 
-	const docs = await serverQueryContent<NuxtContent>(event, path.pathname).sort({ date: -1 }).where({ layout: "review" }).find()
+	const docs = await serverQueryContent<NuxtContent>(event, path.pathname).sort({ date: -1 }).where({ layout: 'review' }).find()
 
 	for (const post of docs) {
+		let contentPath = post._path
+		contentPath = contentPath ??= '/'
+
 		const item: JSONFeedItem = {
 			id: post.url,
-			url: new URL(post._path, 'https://ashernorland.com').toString(),
+			url: new URL(contentPath, 'https://ashernorland.com').toString(),
 			title: post.title,
-			content_html: post.content,
-			date_published: post.date_published.toISOString(),
-			date_modified: post.date_modified.toISOString(),
+			content_html: '',
+			summary: post.description,
+			date_published: new Date(post.date_published).toISOString(),
+			date_modified: new Date(post.date_modified).toISOString(),
+			author: [author],
+			tags: [],
+			language: 'en-US',
+			attachments: []
 		}
 		feed.items.push(item)
 	}
