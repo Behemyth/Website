@@ -6,7 +6,7 @@ NuxtPage
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 
 const links =
-	await queryContent('/').where({ feed: true }).find().then((value) => {
+	await queryContent('/').where({ layout: 'feed' }).find().then((value) => {
 		return value.map((content: ParsedContent) => {
 			return {
 				rel: 'alternate',

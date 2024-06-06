@@ -1,4 +1,3 @@
-import { h } from 'vue'
 import { serverQueryContent } from '#content/server'
 import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '~/types/content'
 
