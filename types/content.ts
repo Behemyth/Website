@@ -59,11 +59,11 @@ export type JSONFeed = {
 export interface NuxtFeed extends ParsedContent {
 	title: string
 	id: string
+	description: string
 }
 
 // Extended content information
 export interface NuxtContent extends ParsedContent {
 	title: string
-	link: string
-	data: Date
+	date: Date
 }

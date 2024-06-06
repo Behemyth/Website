@@ -1,5 +1,5 @@
 import { serverQueryContent } from '#content/server'
-import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedItem } from '~/types/content'
+import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '~/types/content'
 
 export default defineEventHandler(async (event) => {
 	// Get the path from the router
@@ -14,12 +14,24 @@ export default defineEventHandler(async (event) => {
 		throw new Error('Feed not found')
 	}
 
+	const author: JSONFeedAuthor = {
+		name: 'Asher Norland',
+		url: new URL('/contact', 'https://ashernorland.com').toString(),
+		avatar: new URL('/avatar/293a56bef971ab4999d6230491957d33', 'https://www.gravatar.com').toString()
+	}
+
 	const feed: JSONFeed = {
 		version: 'https://jsonfeed.org/version/1.1',
 		title: feedContent.title,
+		home_page_url: new URL('https://ashernorland.com').toString(),
+		feed_url: new URL(path, 'https://ashernorland.com').toString(),
 		description: feedContent.description,
-		home_page_url: new URL(path, 'https://ashernorland.com').toString(),
+		user_comment: 'Copyright © ' + new Date().getFullYear() + ' Asher Norland',
+		icon: new URL('/favicon.ico', 'https://ashernorland.com').toString(),
+		favicon: new URL('/favicon.ico', 'https://ashernorland.com').toString(),
+		author: [author],
 		language: 'en-US',
+		expired: false,
 		items: []
 	}
 
@@ -27,8 +39,12 @@ export default defineEventHandler(async (event) => {
 
 	for (const post of docs) {
 		const item: JSONFeedItem = {
-			id: post.id,
-			title: post.title
+			id: post.url,
+			url: new URL(post._path, 'https://ashernorland.com').toString(),
+			title: post.title,
+			content_html: post.content,
+			date_published: post.date_published.toISOString(),
+			date_modified: post.date_modified.toISOString(),
 		}
 		feed.items.push(item)
 	}
