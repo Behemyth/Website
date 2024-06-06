@@ -3,10 +3,16 @@ import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedItem } from '~/types/cont
 
 export default defineEventHandler(async (event) => {
 	// Get the path from the router
-	let path = getRouterParam(event, 'path')
-	path = path ??= '/'
+	let pathName = getRouterParam(event, 'path')
+	pathName = pathName ??= '/'
 
-	const feedContent = await serverQueryContent<NuxtFeed>(event).where({ _partial: false }).findOne()
+	const path = new URL(pathName, 'https://ashernorland.com')
+
+	const feedContent: NuxtFeed | undefined = await serverQueryContent<NuxtFeed>(event, path).where({ _path: path.pathname }).findOne()
+
+	if (!feedContent) {
+		throw new Error('Feed not found')
+	}
 
 	const feed: JSONFeed = {
 		version: 'https://jsonfeed.org/version/1.1',
@@ -17,7 +23,7 @@ export default defineEventHandler(async (event) => {
 		items: []
 	}
 
-	const docs = await serverQueryContent<NuxtContent>(event).sort({ date: -1 }).where({ _partial: false }).find()
+	const docs = await serverQueryContent<NuxtContent>(event, path.pathname).sort({ date: -1 }).where({ layout: "review" }).find()
 
 	for (const post of docs) {
 		const item: JSONFeedItem = {
