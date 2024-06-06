@@ -10,6 +10,6 @@ main.flex.flex-col.min-h-dvh.prose.max-w-5xl.mx-auto(class="dark:prose-invert")
 <script setup lang="ts">
 
 const route = useRoute()
-prerenderRoutes(route.path + '/feed')
+prerenderRoutes('/feed' + route.path)
 
 </script>
