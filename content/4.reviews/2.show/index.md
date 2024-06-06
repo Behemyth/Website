@@ -1,6 +1,7 @@
 ---
-layout: feed
+layout: default
 navTitle: 'About'
+feed: true
 ---
 
 # About

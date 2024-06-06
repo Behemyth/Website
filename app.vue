@@ -6,13 +6,13 @@ NuxtPage
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 
 const links =
-	await queryContent('/').where({ layout: 'feed' }).find().then((value) => {
+	await queryContent('/').where({ feed: true }).find().then((value) => {
 		return value.map((content: ParsedContent) => {
 			return {
 				rel: 'alternate',
-				type: 'application/rss+xml',
 				title: content.title,
-				href: 'https://www.ashernorland.com/rss/' + content._path
+				type: 'application/feed+json',
+				href: 'https://www.ashernorland.com/feed' + content._path
 			}
 		})
 	})

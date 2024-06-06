@@ -1,6 +1,7 @@
 ---
-layout: feed
+layout: default
 navTitle: 'Reviews'
+feed: true
 ---
 
 # Reviews

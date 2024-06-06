@@ -1,11 +1,11 @@
 ---
 layout: review
-intRating: 5
-entRating: 6
-rating: 6
-TMDB_ID: 106379
-date_published: 2024-04-27
-date_modified: 2024-04-27
+intRating: 2
+entRating: 4
+rating: 4
+TMDB_ID: 940721
+date_published: 2024-06-06
+date_modified: 2024-06-06
 description: This is a description
 ---
 
