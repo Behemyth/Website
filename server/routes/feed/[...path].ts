@@ -1,18 +1,21 @@
-import { h } from 'vue'
 import { serverQueryContent } from '#content/server'
 import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '~/types/content'
 
 export default defineEventHandler(async (event) => {
 	// Get the path from the router
-	let pathName = getRouterParam(event, 'path')
-	pathName = pathName ??= '/'
+	let path = getRouterParam(event, 'path')
+	path = path ? '/' + path : '/'
 
-	const path = new URL(pathName, 'https://ashernorland.com')
-
-	const feedContent: NuxtFeed | undefined = await serverQueryContent<NuxtFeed>(event, path).where({ _path: path.pathname }).findOne()
+	const feedContent: NuxtFeed | undefined = await serverQueryContent<NuxtFeed>(event, path)
+		.where({ layout: 'feed', _path: path })
+		.findOne()
 
 	if (!feedContent) {
-		throw new Error('Feed not found')
+		throw createError({
+			statusCode: 404,
+			statusMessage:
+				'Feed not found'
+		})
 	}
 
 	const author: JSONFeedAuthor = {
@@ -36,7 +39,10 @@ export default defineEventHandler(async (event) => {
 		items: []
 	}
 
-	const docs = await serverQueryContent<NuxtContent>(event, path.pathname).sort({ date: -1 }).where({ layout: 'review' }).find()
+	const docs: NuxtContent[] = await serverQueryContent<NuxtContent>(event, path)
+		.sort({ date: -1 })
+		.where({ layout: 'review' })
+		.find()
 
 	for (const post of docs) {
 		let contentPath = post._path

@@ -25,15 +25,15 @@ const props = defineProps({
 
 const type = computed(() => {
 	switch (props.category) {
-		case 'movie': {
-			return 'movie'
-		}
-		case 'show': {
-			return 'tv'
-		}
-		default: {
-			throw new TypeError('No ' + props.category + ' type')
-		}
+	case 'movie': {
+		return 'movie'
+	}
+	case 'show': {
+		return 'tv'
+	}
+	default: {
+		throw new TypeError('No ' + props.category + ' type')
+	}
 	}
 }).value
 

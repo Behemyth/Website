@@ -69,7 +69,7 @@ export default defineNuxtConfig({
 		prerender: {
 			crawlLinks: true,
 			interval: 50, // 50ms to avoid rate limiting of the TMDB API
-			routes: ['/feed']
+			routes: ['/']
 		}
 	},
 	i18n: {
