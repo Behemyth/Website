@@ -12,7 +12,7 @@ const links =
 				rel: 'alternate',
 				title: content.title,
 				type: 'application/feed+json',
-				href: '/feed' + content._path
+				href: content._path + '/feed'
 			}
 		})
 	})
