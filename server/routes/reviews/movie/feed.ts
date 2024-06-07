@@ -2,13 +2,8 @@ import { serverQueryContent } from '#content/server'
 import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '~/types/content'
 
 export default defineEventHandler(async (event) => {
-	// Get the path from the router
-	let path = getRouterParam(event, 'path')
-	path = path ? '/' + path : '/'
-
-	const feedContent: NuxtFeed | undefined = await serverQueryContent<NuxtFeed>(event, path)
-		.where({ layout: 'feed', _path: path })
-		.findOne()
+	const path = '/reviews/movie'
+	const feedContent: NuxtFeed | undefined = await serverQueryContent<NuxtFeed>(event, path).findOne()
 
 	if (!feedContent) {
 		throw createError({
