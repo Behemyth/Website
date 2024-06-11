@@ -1,0 +1,5 @@
+---
+navTitle: 'Photography'
+---
+
+# Photography
