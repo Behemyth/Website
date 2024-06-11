@@ -1,6 +1,9 @@
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
 	ssr: true,
+	future: {
+		compatibilityVersion: 4
+	},
 	modules: [
 		'@nuxt/content',
 		'@nuxt/devtools',
