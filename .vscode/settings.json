@@ -11,5 +11,6 @@
     "Nuxt",
     "Polski",
     "TMDB"
-  ]
+  ],
+  "eslint.experimental.useFlatConfig": true
 }
