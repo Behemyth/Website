@@ -14,7 +14,6 @@ export default defineNuxtConfig({
 		"@nuxt/eslint"
 	],
 	eslint: {
-		checker: true
 	},
 	// https://nuxt.com/docs/guide/going-further/debugging
 	sourcemap: {
