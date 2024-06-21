@@ -1,14 +1,20 @@
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
 	ssr: true,
+	future: {
+		compatibilityVersion: 4
+	},
 	modules: [
 		'@nuxt/content',
 		'@nuxt/devtools',
 		'@nuxtjs/sitemap',
 		'@nuxt/image',
 		'@nuxtjs/i18n',
-		'@nuxt/ui'
+		'@nuxt/ui',
+		"@nuxt/eslint"
 	],
+	eslint: {
+	},
 	// https://nuxt.com/docs/guide/going-further/debugging
 	sourcemap: {
 		server: true,
