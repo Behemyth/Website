@@ -29,14 +29,17 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "*"
           cache: npm
+          check-latest: true
 
       - name: Install Dependencies
         run: npm install
 
       - name: Static Nuxt Export
-        run: npm run generate
+        run: npm run build
+        env:
+          NITRO_PRESET: github_pages
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
