@@ -22,6 +22,6 @@ const onClick = () => {
 	const index = values.indexOf(colorMode.value)
 	const next = (index + 1) % values.length
 
-	colorMode.preference = values[next]
+	colorMode.preference = values[next]!
 }
 </script>

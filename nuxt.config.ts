@@ -10,8 +10,11 @@ export default defineNuxtConfig({
 		'@nuxtjs/sitemap',
 		'@nuxt/image',
 		'@nuxtjs/i18n',
-		'@nuxt/ui'
+		'@nuxt/ui',
+		"@nuxt/eslint"
 	],
+	eslint: {
+	},
 	// https://nuxt.com/docs/guide/going-further/debugging
 	sourcemap: {
 		server: true,
