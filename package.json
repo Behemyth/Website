@@ -11,7 +11,7 @@
 		"lint:fix": "eslint . --fix"
 	},
 	"dependencies": {
-		"@nuxt/content": "^2.12.1",
+		"@nuxt/content": "^2.13.1",
 		"@nuxt/ui": "^2.17.0"
 	},
 	"devDependencies": {
