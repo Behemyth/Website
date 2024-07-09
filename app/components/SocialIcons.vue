@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 .flex.space-x-6
 	ULink(v-for="social in props.socials", :key="social.name", :to="social.link", :title="social.name")
 		UIcon.shrink-0.w-6.h-6.align-middle(

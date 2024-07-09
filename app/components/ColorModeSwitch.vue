@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 button.inline-block.w-6(aria-label="Color Mode", @click="onClick")
 	ColorScheme
 		UIcon.w-6.h-6(

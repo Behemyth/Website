@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 ULink.h-32.flex.w-full.items-center.bg-white.border.border-gray-200.rounded-lg.shadow(:to="props.content._path", :title="data?.title" class="md:h-48 lg:h-64 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700")
 	NuxtPicture.h-32(:src="imgURL" preload class="aspect-[2/3] md:h-48 lg:h-64" :img-attrs="{class:'rounded-s-lg'}")
 	.flex.flex-col.justify-between.p-4.leading-normal

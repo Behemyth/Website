@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 nav.max-w-5xl.w-full.mx-auto.p-1.bg-white.shadow(
 	class="dark:bg-gray-900"
 )

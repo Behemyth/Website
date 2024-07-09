@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 .flex.space-x-6
 	ULink(v-for="contact in contacts", :key="contact.name", :to="contact.link", :title="contact.name")
 		UIcon.w-12.h-12(:name="contact.icon")

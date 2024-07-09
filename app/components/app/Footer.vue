@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 footer.w-full.max-w-5xl.mx-auto.p-4.bg-white.shadow(
 	class="dark:bg-gray-900"
 )

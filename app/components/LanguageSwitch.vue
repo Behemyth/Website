@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 USelect(
 	id="languageSwitch" 
 	v-model="locale" 

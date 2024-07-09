@@ -16,5 +16,6 @@
     "Polski",
     "TMDB"
   ],
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "eslint.format.enable": true
 }

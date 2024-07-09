@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 .relative.w-16(class="aspect-[9/2]")
 	UIcon(v-for="index in fullStars" :key="index" name="i-mdi-star" :size="props.size.toString()" aria-hidden="true")
 	UIcon(v-for="index in halfStars" :key="index" name="i-mdi-star-half-full" :size="props.size.toString()" aria-hidden="true")

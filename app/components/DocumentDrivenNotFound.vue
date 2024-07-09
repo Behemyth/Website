@@ -1,4 +1,4 @@
-<template lang="pug">
+<template >
 h1 What is this?
 
 </template>
