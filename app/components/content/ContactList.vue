@@ -1,7 +1,9 @@
-<template >
-.flex.space-x-6
-	ULink(v-for="contact in contacts", :key="contact.name", :to="contact.link", :title="contact.name")
-		UIcon.w-12.h-12(:name="contact.icon")
+<template>
+	<div class="flex space-x-6">
+		<ULink v-for="contact in contacts" :key="contact.name" :to="contact.link" :title="contact.name">
+			<UIcon :name="contact.icon" class="w-12 h-12" />
+		</ULink>
+	</div>
 </template>
 
 <script setup lang="ts">
