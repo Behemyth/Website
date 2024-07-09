@@ -9,10 +9,11 @@
   "cSpell.words": [
     "heroicons",
     "jstoxml",
+    "nuxi",
     "Nuxt",
     "nuxtjs",
     "Polski",
     "TMDB"
   ],
-  "eslint.experimental.useFlatConfig": true
+  "eslint.useFlatConfig": true
 }
