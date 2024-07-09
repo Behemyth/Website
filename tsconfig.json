@@ -5,5 +5,13 @@
 		"plugins": [
 			"@vue/language-plugin-pug"
 		]
+	},
+	"compilerOptions": {
+		"baseUrl": ".", // root of your "paths" below. Required if "paths" is defined
+		"paths": {
+			"@types/*": [
+				"types/*"
+			]
+		}
 	}
 }
