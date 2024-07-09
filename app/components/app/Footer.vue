@@ -10,7 +10,7 @@
 			<SocialIcons :socials="socials ? socials : []" />
 		</div>
 		<hr class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700">
-		<div>.flex.items-center.justify-between
+		<div class="flex items-center justify-between">
 			<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">Copyright &copy; {{ new
 				Date().getFullYear() }}</span>
 			<LanguageSwitch />
