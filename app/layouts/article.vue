@@ -1,7 +1,9 @@
-<template >
-article.flex.flex-col.min-h-dvh.prose.max-w-5xl.mx-auto(class="dark:prose-invert")
-	AppHeader
-	.grow.px-4.py-4
-		slot
-	AppFooter
+<template>
+	<article class="flex flex-col min-h-dvh prose max-w-5xl mx-auto dark:prose-invert">
+		<AppHeader />
+		<div class="grow px-4 py-4">
+			<slot />
+		</div>
+		<AppFooter />
+	</article>
 </template>
