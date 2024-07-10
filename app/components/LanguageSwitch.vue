@@ -1,5 +1,6 @@
 <template>
-	<USelect id="languageSwitch" v-model="locale" :options="availableLocales" option-attribute="name"
+	<USelect
+id="languageSwitch" v-model="locale" :options="availableLocales" option-attribute="name"
 		value-attribute="value" required />
 </template>
 

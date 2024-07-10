@@ -2,7 +2,8 @@
 	<footer class="w-full max-w-5xl mx-auto p-4 bg-white shadow dark:bg-gray-900">
 		<div class="flex items-center justify-between">
 			<ULink to="/contact" rel="author" class="flex items-center">
-				<NuxtPicture src="/gravatar/avatar/293a56bef971ab4999d6230491957d33"
+				<NuxtPicture
+src="/gravatar/avatar/293a56bef971ab4999d6230491957d33"
 					:img-attrs="{ class: 'h-12 mr-3 rounded-full' }" preload />
 				<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{ $t('Contact')
 					}}</span>

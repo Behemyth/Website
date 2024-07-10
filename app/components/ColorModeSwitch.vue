@@ -1,7 +1,8 @@
 <template>
 	<button aria-label="Color Mode" class="inline-block w-6" @click="onClick">
 		<ColorScheme>
-			<UIcon v-if="colorMode.preference === 'dark'" name="heroicons:moon" dynamic
+			<UIcon
+v-if="colorMode.preference === 'dark'" name="heroicons:moon" dynamic
 				class="w-6 h-6 dark:text-gray-300" />
 			<UIcon v-else name="heroicons:sun" dynamic class="w-6 h-6 text-gray-900" />
 		</ColorScheme>
