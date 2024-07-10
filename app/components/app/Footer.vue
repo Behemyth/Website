@@ -21,7 +21,7 @@ src="/gravatar/avatar/293a56bef971ab4999d6230491957d33"
 </template>
 
 <script setup lang="ts">
-import type { MetaData } from '@types/metadata'
+import type { MetaData } from '@schema/metadata'
 
 const { data: socials } = useLazyAsyncData('socials', () =>
 	queryContent<MetaData>('_data')

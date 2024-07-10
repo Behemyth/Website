@@ -1,5 +1,5 @@
 import { serverQueryContent } from '#content/server'
-import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '~/types/content'
+import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '@schema/content'
 
 export default defineEventHandler(async (event) => {
 	const path = '/reviews'
