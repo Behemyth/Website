@@ -29,7 +29,7 @@ const isOpen = ref(false)
 const navigation = await fetchContentNavigation()
 
 const links = computed(() => {
-	return navigation.map((link: any) => {
+	return navigation.map((link) => {
 		return {
 			label: link.navTitle || link.title,
 			to: link._path
