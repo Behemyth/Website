@@ -1,4 +1,4 @@
-import type { NuxtContent } from '~/types/content'
+import type { NuxtContent } from '@schema/content'
 
 export type Movie = {
 	id: number
