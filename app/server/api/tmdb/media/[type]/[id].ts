@@ -16,11 +16,10 @@ export default defineEventHandler(async (event) => {
 				Authorization: `Bearer ${config.apiSecret}`
 			}
 		})
-	} catch (error: any) {
-		const status = error?.response?.status || 500
-		setResponseStatus(event, status)
+	} catch (error: unknown) {
+		setResponseStatus(event, 500)
 		return {
-			error: String(error)?.replace(config.apiSecret, '***')
+			error: "An error occurred while fetching the data",
 		}
 	}
 })
