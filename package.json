@@ -22,6 +22,6 @@
 		"@nuxtjs/sitemap": "^5.3.5",
 		"eslint": "^9.7.0",
 		"nuxt": "^3.12.1",
-		"typescript": "^5.5.3"
+		"typescript": "^5.5.4"
 	}
 }
