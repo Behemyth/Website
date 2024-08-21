@@ -21,5 +21,8 @@
 		"eslint": "^9.9.0",
 		"nuxt": "^3.12.4",
 		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"@giscus/vue": "^3.0.0"
 	}
 }

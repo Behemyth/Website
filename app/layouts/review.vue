@@ -3,7 +3,10 @@
 		<AppHeader />
 		<div class="grow px-4 py-4">
 			<slot />
+
 		</div>
+		<DiscussionList
+		category="Movies"/>
 		<AppFooter />
 	</main>
 </template>
