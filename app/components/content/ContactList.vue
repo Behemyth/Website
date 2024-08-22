@@ -1,5 +1,5 @@
 <template>
-	<div class="flex space-x-6">
+	<div class="not-prose flex space-x-6">
 		<ULink v-for="contact in contacts" :key="contact.name" :to="contact.link" :title="contact.name">
 			<UIcon :name="contact.icon" class="w-12 h-12" />
 		</ULink>
