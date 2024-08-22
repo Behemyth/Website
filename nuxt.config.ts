@@ -29,8 +29,8 @@ export default defineNuxtConfig({
 	colorMode: {
 	},
 
+	// https://ui.nuxt.com/getting-started/theming
 	ui: {
-		icons: ['mdi']
 	},
 
 	site: {
