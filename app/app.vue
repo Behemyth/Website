@@ -19,3 +19,10 @@ useHead({
 	link: links
 })
 </script>
+
+<style>
+	/* Prevents content shifting. Note: Currently not supported on Safari */
+	html {
+		scrollbar-gutter: stable;
+	}
+</style>
