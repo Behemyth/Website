@@ -10,11 +10,12 @@ const links =
 				rel: 'alternate',
 				title: content.title,
 				type: 'application/feed+json',
-				href: content._path + '/feed'
+				href: content._path + '/feed.json'
 			}
 		})
 	})
 
+// These links will also be picked up by the pre-renderer
 useHead({
 	link: links
 })

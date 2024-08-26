@@ -62,7 +62,6 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-
 	// https://image.nuxt.com/
 	image: {
 		format: ['webp'],
@@ -87,7 +86,7 @@ export default defineNuxtConfig({
 		prerender: {
 			crawlLinks: true,
 			interval: 50, // 50ms to avoid rate limiting of the TMDB API
-			routes: ['/', '/reviews/feed']
+			routes: ['/']
 		}
 	},
 
