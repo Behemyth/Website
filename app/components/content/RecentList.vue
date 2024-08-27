@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 
-import type { NuxtContentReview } from '@schema/movie'
+import type { NuxtContentReview } from 'types/movie'
 
 const props = defineProps({
 	size: {

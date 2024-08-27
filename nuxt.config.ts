@@ -1,3 +1,5 @@
+import { fileURLToPath } from "node:url";
+
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
 	ssr: true,
@@ -79,6 +81,10 @@ export default defineNuxtConfig({
 
 	typescript: {
 		strict: true
+	},
+
+	alias: {
+		'types': fileURLToPath(new URL('./types', import.meta.url)),
 	},
 
 	nitro: {

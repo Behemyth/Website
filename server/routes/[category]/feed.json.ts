@@ -1,5 +1,5 @@
 import { serverQueryContent } from '#content/server'
-import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '@schema/content'
+import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from 'types/content'
 
 export default defineEventHandler(async (event) => {
 

@@ -16,8 +16,8 @@
 
 <script setup lang="ts">
 
-import type { Media } from '@schema/tmdb'
-import type { NuxtContentReview } from '@schema/movie'
+import type { Media } from 'types/tmdb'
+import type { NuxtContentReview } from 'types/movie'
 
 const props = defineProps({
 	type: {
