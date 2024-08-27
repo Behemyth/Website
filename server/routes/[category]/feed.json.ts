@@ -3,7 +3,7 @@ import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } fr
 
 export default defineEventHandler(async (event) => {
 
-	const path = '/reviews'
+	const path = getRouterParam(event, 'category')!
 	const feedContent: NuxtFeed | undefined = await serverQueryContent<NuxtFeed>(event, path).findOne()
 
 	if (!feedContent) {
@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
 	}
 
 	const docs: NuxtContent[] = await serverQueryContent<NuxtContent>(event, path)
-		.sort({ date: -1 })
+		.sort({ date_published: -1 })
 		.where({ layout: 'review' })
 		.find()
 

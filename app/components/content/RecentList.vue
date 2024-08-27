@@ -41,6 +41,6 @@ const type = computed(() => {
 
 const reviews = await queryContent<NuxtContentReview>('reviews', props.category)
 	.where({ layout: 'review' })
-	.sort({ date: -1 }).limit(props.limit).find()
+	.sort({ date_published: -1 }).limit(props.limit).find()
 
 </script>

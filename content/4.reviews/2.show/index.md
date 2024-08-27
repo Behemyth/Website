@@ -1,5 +1,4 @@
 ---
-layout: feed
 navTitle: 'About'
 ---
 
