@@ -8,6 +8,10 @@ export default defineNuxtConfig({
 		compatibilityVersion: 4
 	},
 
+	experimental: {
+		renderJsonPayloads: true
+	},
+
 	modules: [
 		'@nuxt/content',
 		'@nuxt/devtools',
