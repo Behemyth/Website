@@ -1,5 +1,7 @@
-<template lang="pug">
-USelect(id="languageSwitch" v-model="locale" :options="availableLocales" option-attribute="name" value-attribute="value" required)
+<template>
+	<USelect
+		id="languageSwitch" v-model="locale" :options="availableLocales" option-attribute="name"
+		value-attribute="value" required />
 </template>
 
 <script setup lang="ts">

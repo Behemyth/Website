@@ -1,9 +1,11 @@
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
 	ssr: true,
+
 	future: {
 		compatibilityVersion: 4
 	},
+
 	modules: [
 		'@nuxt/content',
 		'@nuxt/devtools',
@@ -13,22 +15,28 @@ export default defineNuxtConfig({
 		'@nuxt/ui',
 		"@nuxt/eslint"
 	],
+
 	eslint: {
 	},
+
 	// https://nuxt.com/docs/guide/going-further/debugging
 	sourcemap: {
 		server: true,
 		client: true
 	},
+
 	// https://color-mode.nuxtjs.org
 	colorMode: {
 	},
+
+	// https://ui.nuxt.com/getting-started/theming
 	ui: {
-		icons: ['mdi']
 	},
+
 	site: {
 		url: 'https://ashernorland.com'
 	},
+
 	// https://content.nuxtjs.org
 	content: {
 		markdown: {
@@ -64,20 +72,24 @@ export default defineNuxtConfig({
 		},
 		dir: 'public'
 	},
+
 	devtools: {
 		enabled: true
 	},
+
 	typescript: {
 		strict: true
 	},
+
 	nitro: {
 		// static: true, // Not set, to support 'dev' server. Default is `static: true` for 'start' and 'generate' commands
 		prerender: {
 			crawlLinks: true,
 			interval: 50, // 50ms to avoid rate limiting of the TMDB API
-			routes: ['/', '/reviews/feed']
+			routes: ['/']
 		}
 	},
+
 	i18n: {
 		detectBrowserLanguage: {
 			useCookie: true,
@@ -100,10 +112,13 @@ export default defineNuxtConfig({
 		langDir: 'locales',
 		defaultLocale: 'en'
 	},
+
 	runtimeConfig: {
 		apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
 		public: {
 			apiBase: '' // can be overridden by NUXT_PUBLIC_API_BASE environment variable
 		}
-	}
+	},
+
+	compatibilityDate: '2024-07-09'
 })

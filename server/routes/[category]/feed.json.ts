@@ -1,8 +1,9 @@
 import { serverQueryContent } from '#content/server'
-import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '~/types/content'
+import type { NuxtContent, NuxtFeed, JSONFeed, JSONFeedAuthor, JSONFeedItem } from '@schema/content'
 
 export default defineEventHandler(async (event) => {
-	const path = '/reviews/movie'
+
+	const path = getRouterParam(event, 'category')!
 	const feedContent: NuxtFeed | undefined = await serverQueryContent<NuxtFeed>(event, path).findOne()
 
 	if (!feedContent) {
@@ -35,7 +36,7 @@ export default defineEventHandler(async (event) => {
 	}
 
 	const docs: NuxtContent[] = await serverQueryContent<NuxtContent>(event, path)
-		.sort({ date: -1 })
+		.sort({ date_published: -1 })
 		.where({ layout: 'review' })
 		.find()
 
@@ -59,6 +60,7 @@ export default defineEventHandler(async (event) => {
 		feed.items.push(item)
 	}
 
-	event.node.res.setHeader('Content-Type', 'application/feed+json')
+	setResponseHeader(event, "Content-Type", "application/feed+json");
+
 	return feed
 })
