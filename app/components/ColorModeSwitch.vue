@@ -1,7 +1,7 @@
 <template>
 	<ClientOnly>
 		<UButton
-			:icon="colorMode.preference === 'dark' ? 'heroicons:moon' : 'heroicons:sun'"
+			:icon="colorMode.preference === 'dark' ? 'i-heroicons-moon' : 'i-heroicons-sun'"
 			color="gray"
       		variant="ghost"
 			aria-label="Color Mode"
