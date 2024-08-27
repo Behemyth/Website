@@ -1,5 +1,5 @@
 <template>
-	<div class="relative w-16 aspect-[9/2]">
+	<div class="not-prose relative w-16 aspect-[9/2]">
 		<UIcon
 			v-for="index in fullStars" :key="index" name="i-mdi-star" :size="props.size.toString()"
 			aria-hidden="true" />

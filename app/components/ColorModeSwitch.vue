@@ -1,12 +1,16 @@
 <template>
-	<button aria-label="Color Mode" class="inline-block w-6 h-6" @click="onClick">
-		<ColorScheme>
-			<UIcon
-				v-if="colorMode.preference === 'dark'" name="heroicons:moon" dynamic
-				class="w-6 h-6 dark:text-gray-300" />
-			<UIcon v-else name="heroicons:sun" dynamic class="w-6 h-6 text-gray-900" />
-		</ColorScheme>
-	</button>
+	<ClientOnly>
+		<UButton
+			:icon="colorMode.preference === 'dark' ? 'i-heroicons-moon' : 'i-heroicons-sun'"
+			color="gray"
+      		variant="ghost"
+			aria-label="Color Mode"
+			@click="onClick"
+		/>
+		<template #fallback>
+			<div class="w-8 h-8" />
+		</template>
+	</ClientOnly>
 </template>
 
 <script setup lang="ts">
