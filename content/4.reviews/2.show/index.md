@@ -9,6 +9,6 @@ navTitle: 'About'
 ::RecentList
 ---
 size: 35
-category: show
+category: tv
 ---
 ::

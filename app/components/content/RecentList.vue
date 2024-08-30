@@ -1,6 +1,6 @@
 <template>
 	<div class="not-prose grid grid-flow-row gap-2 grid-cols-1 md:gap-4 md:grid-cols-2">
-		<ReviewPreview v-for="review in reviews" :key="review.title" :type="type" :content="review" />
+		<ReviewPreview v-for="review in reviews" :key="review.title" :type="props.category" :content="review" />
 	</div>
 	<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">These reviews uses the TMDB API but is not
 		endorsed or certified by TMDB.</span>
@@ -9,6 +9,7 @@
 <script setup lang="ts">
 
 import type { NuxtContentReview } from 'types/movie'
+import type { MediaType } from 'types/tmdb';
 
 const props = defineProps({
 	size: {
@@ -16,7 +17,7 @@ const props = defineProps({
 		required: true
 	},
 	category: {
-		type: String,
+		type: String as PropType<MediaType>,
 		required: true
 	},
 	limit: {
@@ -24,20 +25,6 @@ const props = defineProps({
 		default: 0
 	}
 })
-
-const type = computed(() => {
-	switch (props.category) {
-		case 'movie': {
-			return 'movie'
-		}
-		case 'show': {
-			return 'tv'
-		}
-		default: {
-			throw new TypeError('No ' + props.category + ' type')
-		}
-	}
-}).value
 
 const reviews = await queryContent<NuxtContentReview>('reviews', props.category)
 	.where({ layout: 'review' })
