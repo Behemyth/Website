@@ -22,7 +22,7 @@ limit: 4
 ::RecentList
 ---
 size: 35
-category: tv
+category: show
 limit: 4
 ---
 ::

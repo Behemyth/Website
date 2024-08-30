@@ -18,5 +18,4 @@ export interface NuxtContentReview extends NuxtContent {
 	intRating: number,
 	entRating: number,
 	rating: number
-	TMDB_ID: number
 }
