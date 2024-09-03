@@ -1,4 +1,8 @@
-export type MediaType = 'movie' | 'tv'
+
+export enum MediaType {
+	Movie = 'movie',
+	Show = 'tv'
+}
 
 export interface Genre {
 	id: number
