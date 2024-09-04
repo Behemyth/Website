@@ -19,7 +19,7 @@
 		"@nuxtjs/i18n": "^8.5.1",
 		"@nuxtjs/sitemap": "^5.3.5",
 		"eslint": "^9.9.1",
-		"nuxt": "^3.13.0",
+		"nuxt": "^3.13.1",
 		"typescript": "^5.5.4"
 	},
 	"dependencies": {
