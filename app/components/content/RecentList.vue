@@ -1,10 +1,10 @@
 <template>
 	<div class="not-prose grid grid-flow-row gap-2 grid-cols-1 md:gap-4 md:grid-cols-2">
-		<ReviewPreview 
-			v-for="review in reviews" 
-			:key="review.title" 
-			:category="TransformMediaType(category)" 
-			:path="review._path!" 
+		<ReviewPreview
+			v-for="review in reviews"
+			:key="review.title"
+			:category="TransformMediaType(category)"
+			:path="review.path"
 			:rating="review.rating"
 			:description="review.description"
 			:tmdb-i-d="review.TMDB_ID" />
@@ -15,7 +15,8 @@
 
 <script setup lang="ts">
 
-import type { NuxtContentReview } from 'types/movie'
+import type { NuxtContentReview } from 'types/nuxt'
+import type { ReviewMetadata } from 'types/review'
 import {  MediaType as ReviewMediaType } from 'types/review'
 import {  MediaType as TMDBMediaType } from 'types/tmdb'
 
@@ -43,10 +44,28 @@ function TransformMediaType(reviewMediaType: ReviewMediaType): TMDBMediaType {
 	}
 }
 
-async function QueryReviews(mediaType:ReviewMediaType): Promise<NuxtContentReview[]> {
+function MapNuxtReview(review: NuxtContentReview): ReviewMetadata {
+	if(review._path === undefined) {
+		throw new Error('Review path is undefined')
+	}
+
+	return {
+				path: review._path,
+				description: review.description,
+				TMDB_ID: review.TMDB_ID,
+				title: review.title,
+				intRating: review.intRating,
+				entRating: review.entRating,
+				rating: review.rating
+			}
+}
+
+async function QueryReviews(mediaType:ReviewMediaType): Promise<ReviewMetadata[]> {
 	return await queryContent<NuxtContentReview>('reviews', mediaType)
 	.where({ layout: 'review' })
-	.sort({ date_published: -1 }).limit(props.limit).find()
+	.sort({ date_published: -1 }).limit(props.limit).find().then((value: NuxtContentReview[]) => {
+		return value.map(MapNuxtReview)
+	})
 }
 
 const reviews = await QueryReviews(props.category)
