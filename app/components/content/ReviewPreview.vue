@@ -45,6 +45,11 @@ const imgURL = computed(() => {
 	return data.value?.poster_path ? `/tmdb${data.value?.poster_path}` : '/images/tmdb.svg'
 })
 
-const { data } = await useFetch<Media>(`/api/tmdb/media/${props.category}/${props.tmdbID}`)
+async function QueryTMDB() {
+	const { data } = await useFetch<Media>(`/api/tmdb/media/${props.category}/${props.tmdbID}`)
+	return data
+}
+
+const data = await QueryTMDB()
 
 </script>
