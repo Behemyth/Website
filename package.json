@@ -18,7 +18,7 @@
 		"@nuxt/ui": "^2.18.4",
 		"@nuxtjs/i18n": "^8.5.2",
 		"@nuxtjs/sitemap": "^5.3.5",
-		"eslint": "^9.9.1",
+		"eslint": "^9.10.0",
 		"nuxt": "^3.13.1",
 		"typescript": "^5.5.4"
 	},
