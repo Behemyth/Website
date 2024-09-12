@@ -42,12 +42,12 @@ const props = defineProps({
 })
 
 const imgURL = computed(() => {
-	return data.value?.poster_path ? `/tmdb${data.value?.poster_path}` : '/images/tmdb.svg'
+	return data.poster_path ? `/tmdb${data.poster_path}` : '/images/tmdb.svg'
 })
 
-async function QueryTMDB() {
+async function QueryTMDB() : Promise<Media> {
 	const { data } = await useFetch<Media>(`/api/tmdb/media/${props.category}/${props.tmdbID}`)
-	return data
+	return data;
 }
 
 const data = await QueryTMDB()
