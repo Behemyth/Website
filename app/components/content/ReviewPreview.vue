@@ -45,9 +45,14 @@ const imgURL = computed(() => {
 	return data.poster_path ? `/tmdb${data.poster_path}` : '/images/tmdb.svg'
 })
 
-async function QueryTMDB() : Promise<Media> {
+async function QueryTMDB() {
 	const { data } = await useFetch<Media>(`/api/tmdb/media/${props.category}/${props.tmdbID}`)
-	return data;
+	
+	if(data.value === undefined) {
+		throw new Error('TMDB data is undefined')
+	}
+	
+	return data.value;
 }
 
 const data = await QueryTMDB()
