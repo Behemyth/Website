@@ -1,6 +1,6 @@
 <template>
 	<ULink
-		:to="props.content._path" :title="data?.title"
+		:to="path" :title="data?.title"
 		class="not-prose h-32 flex w-full items-center bg-white border border-gray-200 rounded-lg shadow md:h-48 lg:h-64 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
 		<NuxtPicture
 			:src="imgURL" preload :img-attrs="{ class: 'rounded-s-lg' }"
@@ -8,32 +8,53 @@
 		<div class="flex flex-col justify-between p-4 leading-normal">
 			<h5 class="prose dark:prose-invert mb-2 font-bold tracking-tight text-gray-900 md:text-l lg:text-xl dark:text-white">{{ data?.title
 				}}</h5>
-			<StarRating :value="content.rating" :size="16" />
-			<p class="prose dark:prose-invert mb-3 font-normal text-gray-700 dark:text-gray-400">{{ content.description }}</p>
+			<StarRating :value="rating" :size="16" />
+			<p class="prose dark:prose-invert mb-3 font-normal text-gray-700 dark:text-gray-400">{{ description }}</p>
 		</div>
 	</ULink>
 </template>
 
 <script setup lang="ts">
 
-import type { Media } from '@schema/tmdb'
-import type { NuxtContentReview } from '@schema/movie'
+import type { Media, MediaType } from 'types/tmdb'
 
 const props = defineProps({
-	type: {
+	category: {
+		type: String as PropType<MediaType>,
+		required: true
+	},
+	path: {
 		type: String,
 		required: true
 	},
-	content: {
-		type: Object as () => NuxtContentReview,
+	rating: {
+		type: Number,
 		required: true
+	},
+	description: {
+		type: String,
+		required: true
+	},
+	tmdbID: {
+		type: Number,
+		required: true,
 	}
 })
 
 const imgURL = computed(() => {
-	return data.value?.poster_path ? `/tmdb${data.value?.poster_path}` : '/images/tmdb.svg'
+	return data.poster_path ? `/tmdb${data.poster_path}` : '/images/tmdb.svg'
 })
 
-const { data } = await useFetch<Media>(`/api/tmdb/media/${props.type}/${props.content.TMDB_ID}`)
+async function QueryTMDB() {
+	const { data } = await useFetch<Media>(`/api/tmdb/media/${props.category}/${props.tmdbID}`)
+	
+	if(data.value === undefined) {
+		throw new Error('TMDB data is undefined')
+	}
+	
+	return data.value;
+}
+
+const data = await QueryTMDB()
 
 </script>

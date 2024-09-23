@@ -1,6 +1,13 @@
 <template>
-	<div class="not-prose grid grid-flow-row gap-4 grid-cols-1 md:gap-8 md:grid-cols-2">
-		<ReviewPreview v-for="review in reviews" :key="review.title" :type="type" :content="review" />
+	<div class="not-prose grid grid-flow-row gap-2 grid-cols-1 md:gap-4 md:grid-cols-2">
+		<ReviewPreview
+			v-for="review in reviews"
+			:key="review.title"
+			:category="TransformMediaType(category)"
+			:path="review.path"
+			:rating="review.rating"
+			:description="review.description"
+			:tmdb-i-d="review.TMDB_ID" />
 	</div>
 	<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">These reviews uses the TMDB API but is not
 		endorsed or certified by TMDB.</span>
@@ -8,7 +15,10 @@
 
 <script setup lang="ts">
 
-import type { NuxtContentReview } from '@schema/movie'
+import type { NuxtContentReview } from 'types/nuxt'
+import type { ReviewMetadata } from 'types/review'
+import {  MediaType as ReviewMediaType } from 'types/review'
+import {  MediaType as TMDBMediaType } from 'types/tmdb'
 
 const props = defineProps({
 	size: {
@@ -16,7 +26,7 @@ const props = defineProps({
 		required: true
 	},
 	category: {
-		type: String,
+		type: String as PropType<ReviewMediaType>,
 		required: true
 	},
 	limit: {
@@ -25,22 +35,39 @@ const props = defineProps({
 	}
 })
 
-const type = computed(() => {
-	switch (props.category) {
-		case 'movie': {
-			return 'movie'
-		}
-		case 'show': {
-			return 'tv'
-		}
-		default: {
-			throw new TypeError('No ' + props.category + ' type')
-		}
+function TransformMediaType(reviewMediaType: ReviewMediaType): TMDBMediaType {
+	switch (reviewMediaType) {
+		case ReviewMediaType.Movie:
+			return TMDBMediaType.Movie
+		case ReviewMediaType.Show:
+			return TMDBMediaType.Show
 	}
-}).value
+}
 
-const reviews = await queryContent<NuxtContentReview>('reviews', props.category)
+function MapNuxtReview(review: NuxtContentReview): ReviewMetadata {
+	if(review._path === undefined) {
+		throw new Error('Review path is undefined')
+	}
+
+	return {
+				path: review._path,
+				description: review.description,
+				TMDB_ID: review.TMDB_ID,
+				title: review.title,
+				intRating: review.intRating,
+				entRating: review.entRating,
+				rating: review.rating
+			}
+}
+
+async function QueryReviews(mediaType:ReviewMediaType): Promise<ReviewMetadata[]> {
+	return await queryContent<NuxtContentReview>('reviews', mediaType)
 	.where({ layout: 'review' })
-	.sort({ date_published: -1 }).limit(props.limit).find()
+	.sort({ date_published: -1 }).limit(props.limit).find().then((value: NuxtContentReview[]) => {
+		return value.map(MapNuxtReview)
+	})
+}
+
+const reviews = await QueryReviews(props.category)
 
 </script>

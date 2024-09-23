@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import type { MetaData } from '@schema/metadata'
+import type { MetaData } from 'types/metadata'
 
 const { data: socials } = useLazyAsyncData('socials', () =>
 	queryContent<MetaData>('_data')

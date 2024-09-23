@@ -1,9 +1,15 @@
+import { fileURLToPath } from "node:url";
+
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
 	ssr: true,
 
 	future: {
 		compatibilityVersion: 4
+	},
+
+	experimental: {
+		renderJsonPayloads: true
 	},
 
 	modules: [
@@ -79,6 +85,10 @@ export default defineNuxtConfig({
 
 	typescript: {
 		strict: true
+	},
+
+	alias: {
+		'types': fileURLToPath(new URL('./types', import.meta.url)),
 	},
 
 	nitro: {
