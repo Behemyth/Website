@@ -15,7 +15,6 @@
 
 <script setup lang="ts">
 
-import type { NuxtContentReview } from 'types/nuxt'
 import type { ReviewMetadata } from 'types/review'
 import {  MediaType as ReviewMediaType } from 'types/review'
 import {  MediaType as TMDBMediaType } from 'types/tmdb'
@@ -44,9 +43,51 @@ function TransformMediaType(reviewMediaType: ReviewMediaType): TMDBMediaType {
 	}
 }
 
+// Validates the review data
 function MapNuxtReview(review: NuxtContentReview): ReviewMetadata {
-	if(review._path === undefined) {
-		throw new Error('Review path is undefined')
+	if(	!review._path)
+	{
+		throw new Error('Review path is missing for' + review.title)
+	}
+
+	if(	!review.description)
+	{
+		throw new Error('Review description is missing for' + review.title)
+	}
+
+	if(	!review.TMDB_ID)
+	{
+		throw new Error('Review TMDB_ID is missing for' + review.title)
+	}
+
+	if(	!review.title)
+	{
+		throw new Error('Review title is missing for' + review.title)
+	}
+
+	if(	!review.intRating)
+	{
+		throw new Error('Review intRating is missing for' + review.title)
+	}
+
+	if(	!review.entRating)
+	{
+		throw new Error('Review entRating is missing for' + review.title)
+	}
+
+	if(	!review.rating)
+	{
+		throw new Error('Review rating is missing')
+	}
+
+	if(	!review.date_published)
+	{
+		throw new Error('Review date_published is missing')
+	}
+
+	if(	!review.date_modified)
+	{
+		throw new Error('Review date_modified is missing')
 	}
 
 	return {
@@ -56,7 +97,9 @@ function MapNuxtReview(review: NuxtContentReview): ReviewMetadata {
 				title: review.title,
 				intRating: review.intRating,
 				entRating: review.entRating,
-				rating: review.rating
+				rating: review.rating,
+				date_published: review.date_published,
+				date_modified: review.date_modified
 			}
 }
 
