@@ -29,13 +29,13 @@ export const useLatestReviews = (limit: number, collection?: 'movie' | 'show') =
 	useAsyncData(`review-latest-${limit}-${collection ?? 'all'}`, async () => {
 		const movieQuery = (n: number) =>
 			queryCollection('movie')
-				.select('id', 'title', 'path', 'rating', 'date_published', 'poster_path', 'backdrop_path')
+				.select('id', 'title', 'path', 'rating', 'date_published', 'poster_path', 'backdrop_path', 'description')
 				.order('date_published', 'DESC')
 				.limit(n);
 
 		const showQuery = (n: number) =>
 			queryCollection('show')
-				.select('id', 'title', 'path', 'rating', 'date_published', 'poster_path', 'backdrop_path', 'season_number')
+				.select('id', 'title', 'path', 'rating', 'date_published', 'poster_path', 'backdrop_path', 'season_number', 'description')
 				.order('date_published', 'DESC')
 				.limit(n);
 
