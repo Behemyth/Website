@@ -33,16 +33,14 @@ useSeoMeta({ title: page.value?.title, description: page.value?.description });
 
 // Feed link for RSS-enabled pages
 const route = useRoute();
-const links = computed(() => {
-	if (!page.value?.feed) {
-		return [];
-	}
-	return [{
-		rel: 'alternate',
-		title: page.value?.title,
-		type: 'application/json',
-		href: '/feed' + route.path + '.json',
-	}];
-});
-useHead({ link: links });
+useHead(() => ({
+	link: page.value?.feed
+		? [{
+				rel: 'alternate' as const,
+				title: page.value.title,
+				type: 'application/json',
+				href: '/feed' + route.path + '.json',
+			}]
+		: [],
+}));
 </script>

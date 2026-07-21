@@ -72,14 +72,10 @@ export default defineNuxtConfig({
 		'/**': { appLayout: 'content', prerender: true },
 	},
 
-	future: {
-		compatibilityVersion: 4,
-	},
-
 	experimental: {
 		payloadExtraction: 'client',
-		normalizeComponentNames: true,
 		viewTransition: true,
+		watcher: 'builder',
 	},
 
 	compatibilityDate: '2025-04-28',
