@@ -242,6 +242,7 @@ export function useReviewFilters(items: Ref<FilterableReview[] | null | undefine
 		delete query.person;
 		delete query.rating;
 		delete query.sort;
+		delete query.page;
 
 		if (selectedGenres.value.length > 0) query.genre = selectedGenres.value;
 		if (selectedYears.value.length > 0) query.year = selectedYears.value;
@@ -256,7 +257,7 @@ export function useReviewFilters(items: Ref<FilterableReview[] | null | undefine
 		router.replace({ query });
 	}
 
-	onMounted(applyQueryToFilters);
+	applyQueryToFilters();
 
 	watch(() => route.query, () => {
 		if (filtersReady.value) applyQueryToFilters();
@@ -269,10 +270,8 @@ export function useReviewFilters(items: Ref<FilterableReview[] | null | undefine
 
 	// --- Filtered + sorted items ---
 
-	// Sorting and filtering are deliberately separate computeds: the sorted
-	// list (which drives v-for order and node identity) only changes when the
-	// sort changes, while filter clicks merely produce a new `visibleIds` Set
-	// that flips `v-show` flags — no card unmount/remount churn.
+	// Sorting and filtering stay separate so the grid can preserve sort order
+	// while selecting only the matching ids for the current page.
 	const sortedItems = computed(() => sortReviews(items.value ?? [], sortBy.value, reviewIndex.value));
 
 	const visibleIds = computed(() => filterReviewIds(items.value ?? [], reviewIndex.value, {

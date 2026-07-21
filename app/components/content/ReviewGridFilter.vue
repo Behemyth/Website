@@ -1,6 +1,5 @@
 <template>
 	<div class="flex flex-col gap-6">
-		<!-- Filter bar -->
 		<div class="flex flex-wrap items-end gap-3">
 			<UFormField :label="$t('filter.genre')">
 				<USelectMenu
@@ -64,7 +63,6 @@
 			</UButton>
 		</div>
 
-		<!-- Result count -->
 		<p
 			v-if="items?.length"
 			class="text-sm text-muted"
@@ -72,50 +70,58 @@
 			{{ $t('filter.showing', { filtered: visibleCount, total: items.length }) }}
 		</p>
 
-		<!-- Grid -->
-		<!-- Cards stay mounted across filter changes; visibility is toggled via
-			`v-show` so filtering/clearing is a style flip instead of remounting
-			hundreds of components. -->
-		<div
-			v-show="visibleCount > 0"
-			class="grid grid-flow-row gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
-		>
+		<div>
 			<div
-				v-for="review in sortedItems"
-				v-show="visibleIds.has(review.id)"
-				:key="review.id"
+				v-if="reviews.length"
+				class="grid grid-flow-row gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
 			>
-				<LazyReviewCard
-					:title="review.title"
-					:path="review.path"
-					:rating="Number(review.rating)"
-					:poster-path="review.poster_path ?? ''"
-					:season-number="'season_number' in review && review.season_number != null ? Number(review.season_number) : undefined"
+				<div
+					v-for="review in reviews"
+					:key="review.id"
+				>
+					<LazyReviewCard
+						:title="review.title"
+						:path="review.path"
+						:rating="Number(review.rating)"
+						:poster-path="review.poster_path ?? ''"
+						:season-number="'season_number' in review && review.season_number != null ? Number(review.season_number) : undefined"
+					/>
+				</div>
+			</div>
+
+			<div
+				v-else-if="items?.length && visibleCount === 0"
+				class="flex flex-col items-center gap-4 py-12"
+			>
+				<UIcon
+					name="i-mdi-movie-filter-outline"
+					class="text-muted size-12"
 				/>
+				<p class="text-muted text-center">
+					{{ $t('filter.noMatch') }}
+				</p>
+				<UButton
+					v-if="hasActiveFilters"
+					variant="outline"
+					size="sm"
+					icon="i-mdi-filter-off"
+					@click="clearFilters"
+				>
+					{{ $t('filter.clearFilters') }}
+				</UButton>
 			</div>
 		</div>
 
-		<!-- Empty state -->
-		<div
-			v-if="items?.length && visibleCount === 0"
-			class="flex flex-col items-center gap-4 py-12"
-		>
-			<UIcon
-				name="i-mdi-movie-filter-outline"
-				class="text-muted size-12"
-			/>
-			<p class="text-muted text-center">
-				{{ $t('filter.noMatch') }}
-			</p>
-			<UButton
-				variant="outline"
-				size="sm"
-				icon="i-mdi-filter-off"
-				@click="clearFilters"
-			>
-				{{ $t('filter.clearFilters') }}
-			</UButton>
-		</div>
+		<UPagination
+			v-if="totalPages > 1"
+			:page="page"
+			:total="total"
+			:items-per-page="pageSize"
+			:sibling-count="1"
+			show-edges
+			:to="to"
+			class="self-center"
+		/>
 	</div>
 </template>
 
@@ -123,17 +129,12 @@
 import type { FilterableReview } from '~/composables/useReviewFilters';
 
 const { t } = useI18n();
-
 const props = defineProps<{
 	collection: 'movie' | 'show';
 }>();
 
-// --- Data ---
-
 const { polite: announce } = useAnnouncer();
 
-// Split the query per collection because `season_number` is only valid on
-// show reviews and the `.select()` signature narrows by literal collection type.
 const { data: items } = await useAsyncData(`review-grid-filter-${props.collection}`, async (): Promise<FilterableReview[]> => {
 	if (props.collection === 'show') {
 		const rows = await queryCollection('show')
@@ -148,8 +149,6 @@ const { data: items } = await useAsyncData(`review-grid-filter-${props.collectio
 		.all();
 	return rows as unknown as FilterableReview[];
 });
-
-// --- Filters (state, URL sync, filtering and sorting) ---
 
 const {
 	selectedGenres,
@@ -167,7 +166,8 @@ const {
 	visibleCount,
 } = useReviewFilters(items);
 
-// --- Select options ---
+const filteredReviews = computed(() => sortedItems.value.filter(review => visibleIds.value.has(review.id)));
+const { items: reviews, page, total, totalPages, pageSize, to } = usePagination(filteredReviews);
 
 const ratingOptions = [
 	{ label: '★★★★', value: '8' },
@@ -187,7 +187,5 @@ const sortOptions = computed(() => [
 	{ label: t('filter.releaseYear'), value: 'year' },
 ]);
 
-watch(visibleCount, (count) => {
-	announce(t('filter.announcerShowing', { count }));
-});
+watch(visibleCount, count => announce(t('filter.announcerShowing', { count })));
 </script>
