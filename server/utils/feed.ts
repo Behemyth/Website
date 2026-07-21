@@ -59,7 +59,7 @@ export function addFeedItem(feed: Feed, item: FeedItemData, siteUrl: string, aut
 	const itemUrl = new URL(item.path, siteUrl).toString();
 
 	feed.addItem({
-		id: item.id,
+		id: itemUrl,
 		link: itemUrl,
 		title: item.title,
 		description: item.description,
