@@ -41,12 +41,13 @@
 
 <script setup lang="ts">
 import type { CareerCollectionItem, AcademicCollectionItem } from '@nuxt/content';
+import { getCareerStartDate } from '../../utils/careerPositions';
 
 const { t } = useI18n();
 
 type CareerTimelineItem = Pick<
 	CareerCollectionItem,
-	'id' | 'title' | 'path' | 'start_date' | 'end_date' | 'link' | 'position' | 'achievements' | 'location' | 'tags'
+	'id' | 'title' | 'path' | 'end_date' | 'link' | 'positions' | 'achievements' | 'location' | 'tags'
 >;
 
 type AcademicTimelineItem = Pick<
@@ -59,8 +60,7 @@ type PortfolioTimelineItem = CareerTimelineItem | AcademicTimelineItem;
 const { data: portfolioItems } = await useAsyncData('portfolio-timeline', async (): Promise<PortfolioTimelineItem[]> => {
 	const [careers, academics] = await Promise.all([
 		queryCollection('career')
-			.select('id', 'title', 'path', 'start_date', 'end_date', 'link', 'position', 'achievements', 'location', 'tags')
-			.order('start_date', 'DESC')
+			.select('id', 'title', 'path', 'end_date', 'link', 'positions', 'achievements', 'location', 'tags')
 			.all(),
 		queryCollection('academic')
 			.select('id', 'title', 'path', 'start_date', 'end_date', 'link', 'degree', 'location')
@@ -69,24 +69,32 @@ const { data: portfolioItems } = await useAsyncData('portfolio-timeline', async 
 	]);
 
 	const combined: PortfolioTimelineItem[] = [...careers, ...academics];
-	return combined.sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime());
+	return combined.sort((a, b) => getTimelineStartDate(b).getTime() - getTimelineStartDate(a).getTime());
 });
 
 // Transform items into timeline format
-const timelineItems = computed(() => (portfolioItems.value ?? []).map(item => ({
-	data: item,
-	date: item.end_date
-		? `${new Date(item.start_date).getFullYear()} - ${new Date(item.end_date).getFullYear()}`
-		: `${new Date(item.start_date).getFullYear()} - ${t('portfolio.present')}`,
-	icon: isAcademicItem(item) ? 'i-mdi-school' : 'i-mdi-work',
-})));
+const timelineItems = computed(() => (portfolioItems.value ?? []).map(item => {
+	const startDate = getTimelineStartDate(item);
+
+	return {
+		data: item,
+		date: item.end_date
+			? `${startDate.getUTCFullYear()} - ${new Date(item.end_date).getUTCFullYear()}`
+			: `${startDate.getUTCFullYear()} - ${t('portfolio.present')}`,
+		icon: isAcademicItem(item) ? 'i-mdi-school' : 'i-mdi-work',
+	};
+}));
 
 // Type guard to determine item type
 function isCareerItem(item: PortfolioTimelineItem): item is CareerTimelineItem {
-	return 'position' in item;
+	return 'positions' in item;
 }
 
 function isAcademicItem(item: PortfolioTimelineItem): item is AcademicTimelineItem {
-	return !('position' in item);
+	return !('positions' in item);
+}
+
+function getTimelineStartDate(item: PortfolioTimelineItem): Date {
+	return isCareerItem(item) ? getCareerStartDate(item.positions) : new Date(item.start_date);
 }
 </script>

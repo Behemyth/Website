@@ -1,8 +1,9 @@
 ---
 title: Center for Architecture Science and Ecology
 description: A cross-institutional research center at Rensselaer Polytechnic Institute.
-position: Undergraduate Research Assistant
-start_date: 2017-01-01
+positions:
+  - title: Undergraduate Research Assistant
+    start_date: 2017-01-01
 end_date: 2018-01-01
 location: Troy, NY
 link: https://www.case.rpi.edu/

@@ -1,9 +1,16 @@
 <template>
 	<BaseContentCard
 		:title="career.title"
-		:description="career.position"
+		:description="currentPositionDescription"
 		:to="career.path"
 	>
+		<UPageFeature
+			v-for="position in previousPositions"
+			:key="`${position.title}-${position.start_date}`"
+			icon="i-mdi-briefcase-outline"
+			:description="`${position.title} (${formatCareerPositionPeriod(position, locale, t('portfolio.present'))})`"
+		/>
+
 		<UPageFeature
 			v-for="achievement in career.achievements"
 			:key="achievement"
@@ -39,15 +46,29 @@
 </template>
 
 <script setup lang="ts">
+import type { CareerPosition } from '../../../shared/types/content';
+import { formatCareerPositionPeriod, getCareerPositionPeriods } from '../../utils/careerPositions';
+
 interface Props {
 	job: {
 		title: string;
-		position: string;
+		positions: CareerPosition[];
 		path: string;
+		end_date?: Date;
 		achievements?: string[];
 		location?: string;
 		tags?: string[];
 	};
 }
 const { job: career } = defineProps<Props>();
+const { locale, t } = useI18n();
+
+const positionPeriods = computed(() => getCareerPositionPeriods(career.positions, career.end_date));
+const currentPosition = computed(() => positionPeriods.value.at(-1)!);
+const previousPositions = computed(() => positionPeriods.value.slice(0, -1).reverse());
+const currentPositionDescription = computed(() => {
+	if (positionPeriods.value.length === 1) return currentPosition.value.title;
+
+	return `${currentPosition.value.title} (${formatCareerPositionPeriod(currentPosition.value, locale.value, t('portfolio.present'))})`;
+});
 </script>

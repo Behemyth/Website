@@ -81,13 +81,24 @@ export const ProjectSchema = PageSchema.extend({
 	image: z.string(),
 });
 
+export const CareerPositionSchema = z.object({
+	title: z.string(),
+	start_date: z.coerce.date(),
+});
+
 export const JobSchema = PageSchema.extend({
-	position: z.string(),
+	positions: z.array(CareerPositionSchema)
+		.min(1)
+		.refine(
+			positions => positions.every((position, index) =>
+				index === 0 || position.start_date.getTime() > positions[index - 1].start_date.getTime(),
+			),
+			'Positions must be ordered by strictly increasing start date',
+		),
 	location: z.string(),
 	description: z.string(),
 	tags: z.array(z.string()).default([]),
 	achievements: z.array(z.string()).default([]),
-	start_date: z.coerce.date(),
 	end_date: z.coerce.date().optional(),
 	link: z.string().url(),
 });
@@ -126,6 +137,8 @@ export const LocationSchema = z.object({
  * Base interface for all review types
  */
 export type BaseReview = z.infer<typeof ReviewMetadataSchema>;
+
+export type CareerPosition = z.infer<typeof CareerPositionSchema>;
 
 /**
  * A single image entry within a photography series.
