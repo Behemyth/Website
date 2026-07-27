@@ -1,21 +1,28 @@
 import type { CareerPosition } from '../../shared/types/content';
 
-export interface CareerPositionPeriod extends CareerPosition {
+export type CareerPositionInput = Omit<CareerPosition, 'start_date'> & {
+	start_date: CareerPosition['start_date'] | string;
+};
+
+export interface CareerPositionPeriod {
+	title: string;
+	start_date: Date;
 	end_date?: Date;
 }
 
-export function getCareerStartDate(positions: CareerPosition[]): Date {
-	return new Date(positions[0].start_date);
+export function getCareerStartDate(positions: CareerPositionInput[]): Date {
+	return new Date(positions[0]!.start_date);
 }
 
 export function getCareerPositionPeriods(
-	positions: CareerPosition[],
-	employerEndDate?: Date,
+	positions: CareerPositionInput[],
+	employerEndDate?: Date | string,
 ): CareerPositionPeriod[] {
 	return positions.map((position, index) => ({
-		...position,
+		title: position.title,
+		start_date: new Date(position.start_date),
 		end_date: positions[index + 1]
-			? previousUtcDay(positions[index + 1].start_date)
+			? previousUtcDay(positions[index + 1]!.start_date)
 			: employerEndDate ? new Date(employerEndDate) : undefined,
 	}));
 }
@@ -35,7 +42,7 @@ export function formatCareerPositionPeriod(
 	return `${formatter.format(new Date(period.start_date))} - ${end}`;
 }
 
-function previousUtcDay(date: Date): Date {
+function previousUtcDay(date: Date | string): Date {
 	const previousDay = new Date(date);
 	previousDay.setUTCDate(previousDay.getUTCDate() - 1);
 	return previousDay;

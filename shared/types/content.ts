@@ -91,7 +91,7 @@ export const JobSchema = PageSchema.extend({
 		.min(1)
 		.refine(
 			positions => positions.every((position, index) =>
-				index === 0 || position.start_date.getTime() > positions[index - 1].start_date.getTime(),
+				index === 0 || position.start_date.getTime() > positions[index - 1]!.start_date.getTime(),
 			),
 			'Positions must be ordered by strictly increasing start date',
 		),

@@ -73,7 +73,7 @@ const { data: portfolioItems } = await useAsyncData('portfolio-timeline', async 
 });
 
 // Transform items into timeline format
-const timelineItems = computed(() => (portfolioItems.value ?? []).map(item => {
+const timelineItems = computed(() => (portfolioItems.value ?? []).map((item) => {
 	const startDate = getTimelineStartDate(item);
 
 	return {
