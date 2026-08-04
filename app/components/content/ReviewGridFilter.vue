@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-col gap-6">
-		<div class="flex flex-wrap items-end gap-3">
+		<div class="flex flex-wrap items-end gap-x-3 gap-y-4 border-b border-default pb-5">
 			<UFormField :label="$t('filter.genre')">
 				<USelectMenu
 					v-model="selectedGenres"
@@ -65,7 +65,7 @@
 
 		<p
 			v-if="items?.length"
-			class="text-sm text-muted"
+			class="text-sm text-muted tabular-nums"
 		>
 			{{ $t('filter.showing', { filtered: visibleCount, total: items.length }) }}
 		</p>
@@ -112,16 +112,18 @@
 			</div>
 		</div>
 
-		<UPagination
+		<div
 			v-if="totalPages > 1"
-			:page="page"
-			:total="total"
-			:items-per-page="pageSize"
-			:sibling-count="1"
-			show-edges
-			:to="to"
-			class="self-center"
-		/>
+			class="flex justify-center border-t border-default pt-5"
+		>
+			<UPagination
+				:page="page"
+				:total="total"
+				:items-per-page="pageSize"
+				:sibling-count="1"
+				:to="to"
+			/>
+		</div>
 	</div>
 </template>
 
