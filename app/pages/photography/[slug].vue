@@ -6,7 +6,14 @@
 		<UPageHeader
 			:title="page.title"
 			:description="page.description"
-		/>
+		>
+			<template
+				v-if="feed"
+				#links
+			>
+				<AppFeedSubscribe :feed="feed" />
+			</template>
+		</UPageHeader>
 		<UPageBody>
 			<ContentRenderer :value="page" />
 		</UPageBody>
@@ -27,6 +34,7 @@
 <script lang="ts" setup>
 const { page } = await useContentPage('photography');
 useSeoMeta({ title: page.value?.title, description: page.value?.description });
+const { feed } = useContentFeed();
 
 const images = computed(() => page.value?.images ?? []);
 </script>

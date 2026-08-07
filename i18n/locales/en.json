@@ -17,6 +17,15 @@
 		"filmData": "Film data",
 		"madeWith": "Made with ❤️ by Asher and Ola"
 	},
+	"feed": {
+		"subscribe": "Subscribe",
+		"subscribeTo": "Subscribe to {name}",
+		"feeds": "Feeds",
+		"blog": "Blog",
+		"photography": "Photography",
+		"movieReviews": "Movie Reviews",
+		"showReviews": "Show Reviews"
+	},
 	"index": {
 		"heroDescription": "A personal space with fresh air",
 		"heroHeadline": "Deep breath",

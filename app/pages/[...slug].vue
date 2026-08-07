@@ -18,8 +18,21 @@
 		<UPageHeader
 			:title="page.title"
 			:description="page.description"
-			:links="page.links"
-		/>
+		>
+			<template #links>
+				<UButton
+					v-for="(link, index) in page.links ?? []"
+					:key="index"
+					color="neutral"
+					variant="outline"
+					v-bind="link"
+				/>
+				<AppFeedSubscribe
+					v-if="feed"
+					:feed="feed"
+				/>
+			</template>
+		</UPageHeader>
 		<UPageBody>
 			<ContentRenderer :value="page.body" />
 		</UPageBody>
@@ -30,17 +43,5 @@
 <script lang="ts" setup>
 const { page } = await useContentPage('content');
 useSeoMeta({ title: page.value?.title, description: page.value?.description });
-
-// Feed link for RSS-enabled pages
-const route = useRoute();
-useHead(() => ({
-	link: page.value?.feed
-		? [{
-				rel: 'alternate' as const,
-				title: page.value.title,
-				type: 'application/json',
-				href: '/feed' + route.path + '.json',
-			}]
-		: [],
-}));
+const { feed } = useContentFeed();
 </script>

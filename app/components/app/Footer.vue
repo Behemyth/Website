@@ -14,6 +14,21 @@
 		</template>
 
 		<template #right>
+			<UDropdownMenu
+				:items="feedItems"
+				:content="{ align: 'end' }"
+				:external-icon="false"
+			>
+				<UButton
+					icon="i-lucide-rss"
+					color="neutral"
+					variant="ghost"
+					:aria-label="$t('feed.feeds')"
+					:title="$t('feed.feeds')"
+				>
+					{{ $t('feed.feeds') }}
+				</UButton>
+			</UDropdownMenu>
 			<UButton
 				v-for="social in socials"
 				:key="social.name"
@@ -46,6 +61,8 @@
 </template>
 
 <script setup lang="ts">
+import { contentFeeds, getFeedUrl } from '#shared/utils/feeds';
+
 const { t } = useI18n();
 
 const items = computed(() => [
@@ -62,6 +79,13 @@ const items = computed(() => [
 		to: '/contact',
 	},
 ]);
+
+const feedItems = computed(() => contentFeeds.map(feed => ({
+	label: t(feed.labelKey),
+	icon: 'i-lucide-rss',
+	to: getFeedUrl(feed, 'xml'),
+	external: true,
+})));
 
 const { data: socials } = await useSocialsData();
 </script>

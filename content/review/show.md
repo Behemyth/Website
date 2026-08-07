@@ -1,6 +1,5 @@
 ---
 title:	"Show Reviews"
-feed: "show"
 ---
 
 ::ReviewSection{collection="show"}

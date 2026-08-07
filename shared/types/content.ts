@@ -116,7 +116,6 @@ export const ContentSchema = z.object({
 	description: z.string().optional(),
 	headline: z.string().optional(),
 	links: z.array(LinkSchema).default([]),
-	feed: z.string().optional(),
 });
 
 // Data collections schemas
