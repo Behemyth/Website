@@ -11,7 +11,7 @@
 				v-if="feed"
 				#links
 			>
-				<AppFeedSubscribe :feed="feed" />
+				<AppFeedCopy :feed="feed" />
 			</template>
 		</UPageHeader>
 		<UPageBody>

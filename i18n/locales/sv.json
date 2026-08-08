@@ -18,9 +18,11 @@
         "madeWith": "Gjord med ❤️ av Asher och Ola"
     },
     "feed": {
-        "subscribe": "Prenumerera",
-        "subscribeTo": "Prenumerera på {name}",
         "feeds": "Flöden",
+        "copyUrl": "Kopiera flödes-URL",
+        "copyUrlFor": "Kopiera URL för {name}",
+        "copied": "Flödes-URL kopierad",
+        "copyFailed": "Det gick inte att kopiera flödes-URL:en",
         "blog": "Blogg",
         "photography": "Fotografi",
         "movieReviews": "Filmrecensioner",

@@ -18,9 +18,11 @@
 		"madeWith": "Made with ❤️ by Asher and Ola"
 	},
 	"feed": {
-		"subscribe": "Subscribe",
-		"subscribeTo": "Subscribe to {name}",
 		"feeds": "Feeds",
+		"copyUrl": "Copy feed URL",
+		"copyUrlFor": "Copy {name} feed URL",
+		"copied": "Feed URL copied",
+		"copyFailed": "Could not copy feed URL",
 		"blog": "Blog",
 		"photography": "Photography",
 		"movieReviews": "Movie Reviews",

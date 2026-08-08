@@ -27,7 +27,7 @@
 					variant="outline"
 					v-bind="link"
 				/>
-				<AppFeedSubscribe
+				<AppFeedCopy
 					v-if="feed"
 					:feed="feed"
 				/>
