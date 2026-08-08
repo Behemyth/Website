@@ -1,6 +1,5 @@
 ---
 title: "Movie Reviews"
-feed: "movie"
 ---
 
 ::ReviewSection{collection="movie"}

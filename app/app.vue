@@ -43,6 +43,5 @@ watchEffect(async () => {
 	}
 });
 
-// Per-page alternate feed `<link>` is emitted in `pages/[...slug].vue` for the
-// current route; no global list is needed here.
+// Feed discovery links are emitted by useContentFeed on feedable page routes.
 </script>

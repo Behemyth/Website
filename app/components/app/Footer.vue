@@ -14,6 +14,7 @@
 		</template>
 
 		<template #right>
+			<AppFeedMenu />
 			<UButton
 				v-for="social in socials"
 				:key="social.name"
@@ -62,6 +63,5 @@ const items = computed(() => [
 		to: '/contact',
 	},
 ]);
-
 const { data: socials } = await useSocialsData();
 </script>

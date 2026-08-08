@@ -17,6 +17,17 @@
         "filmData": "Filmdata",
         "madeWith": "Gjord med ❤️ av Asher och Ola"
     },
+    "feed": {
+        "feeds": "Flöden",
+        "copyUrl": "Kopiera flödes-URL",
+        "copyUrlFor": "Kopiera URL för {name}",
+        "copied": "Flödes-URL kopierad",
+        "copyFailed": "Det gick inte att kopiera flödes-URL:en",
+        "blog": "Blogg",
+        "photography": "Fotografi",
+        "movieReviews": "Filmrecensioner",
+        "showReviews": "Serierecensioner"
+    },
     "index": {
         "heroDescription": "En personlig plats med frisk luft",
         "heroHeadline": "Andas djupt",

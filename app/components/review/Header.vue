@@ -94,6 +94,13 @@
 					</template>
 				</div>
 			</template>
+
+			<template
+				v-if="feed"
+				#links
+			>
+				<AppFeedCopy :feed="feed" />
+			</template>
 		</UPageHeader>
 
 		<div
@@ -117,6 +124,7 @@
 
 <script setup lang="ts">
 import type { MovieCollectionItem, ShowCollectionItem } from '@nuxt/content';
+import type { ContentFeed } from '#shared/utils/feeds';
 import { useReviewMetadata, isShowReview } from '~/composables/useReviewMetadata';
 import { useRelatedSeasons } from '~/composables/useRelatedSeasons';
 
@@ -124,6 +132,7 @@ const img = useImage();
 
 const props = defineProps<{
 	content: MovieCollectionItem | ShowCollectionItem;
+	feed?: ContentFeed;
 }>();
 
 // Container is max-w-4xl (896px); full-bleed below lg.

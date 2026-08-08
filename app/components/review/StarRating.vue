@@ -1,33 +1,15 @@
 <template>
-	<div class="flex flex-row relative">
-		<UIcon
-			v-for="index in fullStars"
-			:key="`full-${index}`"
-			name="i-mdi-star"
-			:size="props.size.toString()"
-			aria-hidden="true"
-			color="neutral"
-			variant="ghost"
-		/>
-		<UIcon
-			v-for="index in halfStars"
-			:key="`half-${index}`"
-			name="i-mdi-star-half-full"
-			:size="props.size.toString()"
-			aria-hidden="true"
-			color="neutral"
-			variant="ghost"
-		/>
-		<UIcon
-			v-for="index in noStars"
-			:key="`empty-${index}`"
-			name="i-mdi-star-outline"
-			:size="props.size.toString()"
-			aria-hidden="true"
-			color="neutral"
-			variant="ghost"
-		/>
-	</div>
+	<UInputRating
+		:model-value="value / 2"
+		:length="4"
+		:step="0.5"
+		:size="size === 24 ? 'lg' : 'sm'"
+		icon="i-mdi-star"
+		empty-icon="i-mdi-star-outline"
+		color="neutral"
+		readonly
+		:ui="ratingUi"
+	/>
 </template>
 
 <script setup lang="ts">
@@ -42,15 +24,12 @@ const props = defineProps({
 	},
 });
 
-const fullStars = computed(() => (
-	Math.floor(props.value / 2)
-));
-
-const halfStars = computed(() => (
-	props.value % 2
-));
-
-const noStars = computed(() => (
-	4 - fullStars.value - halfStars.value
-));
+const ratingUi = computed(() => ({
+	root: 'gap-0',
+	...(props.size === 14 && {
+		item: 'size-[14px]',
+		icon: 'size-[14px]',
+		emptyIcon: 'size-[14px]',
+	}),
+}));
 </script>

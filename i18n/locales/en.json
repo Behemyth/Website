@@ -17,6 +17,17 @@
 		"filmData": "Film data",
 		"madeWith": "Made with ❤️ by Asher and Ola"
 	},
+	"feed": {
+		"feeds": "Feeds",
+		"copyUrl": "Copy feed URL",
+		"copyUrlFor": "Copy {name} feed URL",
+		"copied": "Feed URL copied",
+		"copyFailed": "Could not copy feed URL",
+		"blog": "Blog",
+		"photography": "Photography",
+		"movieReviews": "Movie Reviews",
+		"showReviews": "Show Reviews"
+	},
 	"index": {
 		"heroDescription": "A personal space with fresh air",
 		"heroHeadline": "Deep breath",

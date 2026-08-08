@@ -3,7 +3,10 @@
 		v-if="page"
 		class="max-w-4xl mx-auto w-full"
 	>
-		<ReviewHeader :content="page" />
+		<ReviewHeader
+			:content="page"
+			:feed="feed"
+		/>
 		<UPageBody>
 			<ContentRenderer :value="page" />
 		</UPageBody>
@@ -39,4 +42,5 @@ const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1)
 
 const { page } = await useContentPage(category);
 useSeoMeta({ title: page.value?.title, description: page.value?.description });
+const { feed } = useContentFeed();
 </script>

@@ -17,7 +17,7 @@
 			block
 			class="w-full cursor-zoom-in bg-transparent p-0 hover:bg-transparent active:bg-transparent focus-visible:bg-transparent"
 			:aria-label="$t('photography.viewFullSize')"
-			@click="zoomed = index"
+			@click="() => { zoomed = index }"
 		>
 			<div
 				class="relative mx-auto flex w-full items-center justify-center overflow-hidden rounded-sm bg-elevated"

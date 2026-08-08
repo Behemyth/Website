@@ -17,6 +17,17 @@
 		"filmData": "Dane filmowe",
 		"madeWith": "Stworzone z ❤️ przez Ashera i Olę"
 	},
+	"feed": {
+		"feeds": "Kanały",
+		"copyUrl": "Kopiuj adres kanału",
+		"copyUrlFor": "Kopiuj adres kanału: {name}",
+		"copied": "Skopiowano adres kanału",
+		"copyFailed": "Nie udało się skopiować adresu kanału",
+		"blog": "Blog",
+		"photography": "Fotografia",
+		"movieReviews": "Recenzje filmów",
+		"showReviews": "Recenzje seriali"
+	},
 	"index": {
 		"heroDescription": "Osobista przestrzeń ze świeżym powietrzem",
 		"heroHeadline": "Wdech",

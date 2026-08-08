@@ -17,6 +17,17 @@
 		"filmData": "Filmdaten",
 		"madeWith": "Gemacht mit ❤️ von Asher und Ola"
 	},
+	"feed": {
+		"feeds": "Feeds",
+		"copyUrl": "Feed-URL kopieren",
+		"copyUrlFor": "{name}-Feed-URL kopieren",
+		"copied": "Feed-URL kopiert",
+		"copyFailed": "Feed-URL konnte nicht kopiert werden",
+		"blog": "Blog",
+		"photography": "Fotografie",
+		"movieReviews": "Filmbewertungen",
+		"showReviews": "Serienbewertungen"
+	},
 	"index": {
 		"heroDescription": "Ein persönlicher Ort mit frischer Luft",
 		"heroHeadline": "Tief durchatmen",

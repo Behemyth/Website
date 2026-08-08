@@ -5,6 +5,13 @@
 		:to="to"
 		:variant="variant"
 	>
+		<template
+			v-if="$slots.description"
+			#description
+		>
+			<slot name="description" />
+		</template>
+
 		<UTheme
 			v-if="!!$slots.default"
 			:ui="{ pageFeature: featureUi }"

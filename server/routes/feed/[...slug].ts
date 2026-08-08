@@ -1,45 +1,4 @@
-import type { FeedConfig } from '../../utils/feed';
-
-type FeedableCollections = 'blog' | 'photography' | 'movie' | 'show';
-
-const feedConfigs: Record<string, { collection: FeedableCollections; config: FeedConfig }> = {
-	'blog': {
-		collection: 'blog',
-		config: {
-			title: 'Blog',
-			description: 'A collection of my blog posts and articles.',
-			feedPath: '/feed/blog',
-			homePath: '/blog',
-		},
-	},
-	'photography': {
-		collection: 'photography',
-		config: {
-			title: 'Photography',
-			description: 'A collection of my photography work.',
-			feedPath: '/feed/photography',
-			homePath: '/photography',
-		},
-	},
-	'review/movie': {
-		collection: 'movie',
-		config: {
-			title: 'Movie Reviews',
-			description: 'A collection of my movie reviews.',
-			feedPath: '/feed/review/movie',
-			homePath: '/review/movie',
-		},
-	},
-	'review/show': {
-		collection: 'show',
-		config: {
-			title: 'Show Reviews',
-			description: 'A collection of my TV show reviews.',
-			feedPath: '/feed/review/show',
-			homePath: '/review/show',
-		},
-	},
-};
+import { getFeedByKey } from '#shared/utils/feeds';
 
 export default defineCachedEventHandler(async (event) => {
 	const { queryCollection } = await import('@nuxt/content/server');
@@ -59,14 +18,14 @@ export default defineCachedEventHandler(async (event) => {
 	// Strip the extension to get the feed key (e.g. "blog.json" → "blog", "review/movie.xml" → "review/movie")
 	const feedKey = slugParts.replace(/\.(json|xml|atom)$/, '');
 
-	const feedEntry = feedConfigs[feedKey];
+	const feedEntry = getFeedByKey(feedKey);
 	if (!feedEntry) {
 		throw createError({ status: 404, message: 'Feed not found' });
 	}
 
 	const siteUrl = getSiteConfig(event).url;
 	const author = getDefaultAuthor(siteUrl);
-	const feed = createFeed(feedEntry.config, siteUrl, author);
+	const feed = createFeed(feedEntry, siteUrl, author);
 
 	const data = await queryCollection(event, feedEntry.collection)
 		.order('date_published', 'DESC')
