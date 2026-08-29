@@ -16,7 +16,7 @@
 		"test:coverage": "vitest run --coverage"
 	},
 	"devDependencies": {
-		"@iconify-json/lucide": "^1.2.126",
+		"@iconify-json/lucide": "^1.2.127",
 		"@iconify-json/mdi": "^1.2.3",
 		"@nuxt/content": "^3.16.0",
 		"@nuxt/eslint": "^1.17.0",
@@ -35,7 +35,7 @@
 	},
 	"dependencies": {
 		"@giscus/vue": "^3.1.1",
-		"@takumi-rs/core": "^2.12.0",
+		"@takumi-rs/core": "^2.13.1",
 		"feed": "^6.0.0"
 	}
 }
